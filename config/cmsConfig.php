@@ -12,6 +12,7 @@ $configBaseUrl = '/configs';
 $pageBaseUrl = '/pages';
 $postCategoryUrl = '/post-categories';
 $postUrl = '/posts';
+$testimonialUrl = '/testimonials';
 
 return [
     // routes entered in this array are accessible by any user no matter what role is given
@@ -178,56 +179,61 @@ return [
             ],
         ],
         [
-            'name' => 'Settings',
-            'icon' => "<i class='fa fa-cogs' aria-hidden='true'></i>",
-            'hasSubmodules' => true,
-            'routeIndexNameMultipleSubMenu' => ['configs.index'],
-            'submodules' => [
+            'name' => 'Testimonial',
+            'icon' => "<i class='fa fa-user-friends'></i>",
+            'hasSubmodules' => false,
+            'route' => $testimonialUrl,
+            'routeIndexName' => 'testimonials.index',
+            'routeName' => 'testimonials',
+            'permissions' => [
                 [
-                    'name' => 'Configs',
-                    'icon' => '<i class="fa fa-cog" aria-hidden="true"></i>',
-                    'route' => $configBaseUrl,
-                    'routeIndexName' => 'configs.index',
-                    'routeName' => 'configs',
-                    'hasSubmodules' => false,
-                    'permissions' => [
+                    'name' => 'View Testimonial',
+                    'route' => [
+                        'url' => $testimonialUrl,
+                        'method' => $getMethod,
+                    ],
+                ],
+                [
+                    'name' => 'Create Page',
+                    'route' => [
                         [
-                            'name' => 'View Configs',
-                            'route' => [
-                                'url' => $configBaseUrl,
-                                'method' => $getMethod,
-                            ],
+                            'url' => $testimonialUrl . '/create',
+                            'method' => $getMethod,
                         ],
                         [
-                            'name' => 'Create Config',
-                            'route' => [
-                                'url' => $configBaseUrl,
-                                'method' => $postMethod,
-                            ],
-                        ],
-                        [
-                            'name' => 'Edit Config',
-                            'route' => [
-                                'url' => $configBaseUrl . '/*',
-                                'method' => $putMethod,
-                            ],
-                        ],
-                        [
-                            'name' => 'Delete Config',
-                            'route' => [
-                                'url' => $configBaseUrl . '/*',
-                                'method' => $deleteMethod,
-                            ],
+                            'url' => $testimonialUrl,
+                            'method' => $postMethod,
                         ],
                     ],
                 ],
+                [
+                    'name' => 'Edit Page',
+                    'route' => [
+                        [
+                            'url' => $testimonialUrl . '/*/edit',
+                            'method' => $getMethod,
+                        ],
+                        [
+                            'url' => $testimonialUrl . '/*',
+                            'method' => $putMethod,
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Delete Users',
+                    'route' => [
+                        'url' => $pageBaseUrl . '/*',
+                        'method' => $deleteMethod,
+                    ],
+                ]
             ],
+
         ],
         [
             'name' => 'Post',
             'icon' => "<i class='fa fa-signs-post' aria-hidden='true'></i>",
             'hasSubmodules' => true,
-            'routeIndexNameMultipleSubMenu' => ['post-categories.index','posts.index'],
+            'routeIndexNameMultipleSubMenu' => ['post-categories.index', 'posts.index'],
             'submodules' => [
                 [
                     'name' => 'Category',
@@ -359,5 +365,52 @@ return [
             ],
 
         ],
+        [
+            'name' => 'Settings',
+            'icon' => "<i class='fa fa-cogs' aria-hidden='true'></i>",
+            'hasSubmodules' => true,
+            'routeIndexNameMultipleSubMenu' => ['configs.index'],
+            'submodules' => [
+                [
+                    'name' => 'Configs',
+                    'icon' => '<i class="fa fa-cog" aria-hidden="true"></i>',
+                    'route' => $configBaseUrl,
+                    'routeIndexName' => 'configs.index',
+                    'routeName' => 'configs',
+                    'hasSubmodules' => false,
+                    'permissions' => [
+                        [
+                            'name' => 'View Configs',
+                            'route' => [
+                                'url' => $configBaseUrl,
+                                'method' => $getMethod,
+                            ],
+                        ],
+                        [
+                            'name' => 'Create Config',
+                            'route' => [
+                                'url' => $configBaseUrl,
+                                'method' => $postMethod,
+                            ],
+                        ],
+                        [
+                            'name' => 'Edit Config',
+                            'route' => [
+                                'url' => $configBaseUrl . '/*',
+                                'method' => $putMethod,
+                            ],
+                        ],
+                        [
+                            'name' => 'Delete Config',
+                            'route' => [
+                                'url' => $configBaseUrl . '/*',
+                                'method' => $deleteMethod,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+
     ],
 ];
