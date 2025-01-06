@@ -14,6 +14,7 @@ $fileManagerUrl = '/file-manager';
 $postCategoryUrl = '/post-categories';
 $postUrl = '/posts';
 $testimonialUrl = '/testimonials';
+$teamUrl = '/teams';
 
 return [
     // routes entered in this array are accessible by any user no matter what role is given
@@ -223,7 +224,58 @@ return [
                 [
                     'name' => 'Delete Testimonial',
                     'route' => [
-                        'url' => $pageBaseUrl . '/*',
+                        'url' => $testimonialUrl . '/*',
+                        'method' => $deleteMethod,
+                    ],
+                ]
+            ],
+
+        ],
+        [
+            'name' => 'Team',
+            'icon' => "<i class='fa fa-user-group'></i>",
+            'hasSubmodules' => false,
+            'route' => $teamUrl,
+            'routeIndexName' => 'teams.index',
+            'routeName' => 'teams',
+            'permissions' => [
+                [
+                    'name' => 'View Team',
+                    'route' => [
+                        'url' => $teamUrl,
+                        'method' => $getMethod,
+                    ],
+                ],
+                [
+                    'name' => 'Create Team',
+                    'route' => [
+                        [
+                            'url' => $teamUrl . '/create',
+                            'method' => $getMethod,
+                        ],
+                        [
+                            'url' => $teamUrl,
+                            'method' => $postMethod,
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Edit Team',
+                    'route' => [
+                        [
+                            'url' => $teamUrl . '/*/edit',
+                            'method' => $getMethod,
+                        ],
+                        [
+                            'url' => $teamUrl . '/*',
+                            'method' => $putMethod,
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Delete Team',
+                    'route' => [
+                        'url' => $teamUrl . '/*',
                         'method' => $deleteMethod,
                     ],
                 ]

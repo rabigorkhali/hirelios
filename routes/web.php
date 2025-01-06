@@ -10,6 +10,7 @@ use App\Http\Controllers\System\PageController;
 use App\Http\Controllers\System\PostCategoryController;
 use App\Http\Controllers\System\PostController;
 use App\Http\Controllers\System\TestimonialController;
+use App\Http\Controllers\System\TeamController;
 
 
 //Route::get('/', function () {
@@ -39,6 +40,7 @@ Route::prefix(getSystemPrefix())->middleware(['auth', 'permission.routes'])->gro
     Route::resource('/post-categories', PostCategoryController::class, ['except' => ['show']]);
     Route::resource('/posts', PostController::class, ['except' => ['show']]);
     Route::resource('/testimonials', TestimonialController::class);
+    Route::resource('/teams',controller:  TeamController::class);
     Route::get('/file-manager', [\App\Http\Controllers\System\FileManagerController::class, 'index'])->name('file-manager.index');
 
 });
