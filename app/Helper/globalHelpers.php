@@ -196,50 +196,109 @@ function cssIndexProgramColorsRandom()
     $colors = ["green", "blue", "purple", "pink", "black"];
     return $colors[array_rand($colors)];
 }
-use Intervention\Image\ImageManagerStatic;
 
-function uploadImage($dir, $input, $resize = false, $width = '', $height = '')
+function uploadImage($dir, $inputName, $resize = false, $width = null, $height = null)
 {
-    $directory = public_path() .'/'. $dir;
-    if (is_dir($directory) != true) \File::makeDirectory($directory, $mode = 0775, true);
-    $fileName = uniqid();
-    $fileThumbnail = $fileName . '-medium.' . Request::file($input)->getClientOriginalExtension();;
-    $fileSmall = $fileName . '-small.' . Request::file($input)->getClientOriginalExtension();;
-    $fileName = $fileName . '.' . Request::file($input)->getClientOriginalExtension();
-    $image = ImageManagerStatic::make(Request::file($input));
-    $image->orientate();
-    if ($resize) {
-        $image = $image->resize($width, $height, function ($constraint) {
-            $constraint->aspectRatio();
-        });
+    // Ensure the directory exists
+    $directory = public_path($dir);
+    if (!is_dir($directory)) {
+        mkdir($directory, 0775, true);
     }
 
-    $image->save($directory . '/' . $fileName, 100);
+    // Get uploaded file details
+    $file = $_FILES[$inputName];
+    $extension = pathinfo($file['name'], PATHINFO_EXTENSION);
+    $uniqueName = uniqid();
+    $fileName = $uniqueName . '.' . $extension;
+    $fileThumbnail = $uniqueName . '-medium.' . $extension;
+    $fileSmall = $uniqueName . '-small.' . $extension;
 
-    /* THUMBNAIL */
-    $directoryThumbnail = public_path() .'/'. $dir;
-    if (is_dir($directoryThumbnail) != true) \File::makeDirectory($directoryThumbnail, $mode = 0775, true);
-    $imageThumbnail = Image::make(Request::file($input));
-    $imageThumbnail = $image->resize(500, 500, function ($constraintThumbnail) {
-        $constraintThumbnail->aspectRatio();
-    });
-    $imageThumbnail->save($directoryThumbnail . '/' . $fileThumbnail, 50);
-    /* THUMBNAIL */
+    // Move uploaded file to the target directory
+    $originalPath = $directory . '/' . $fileName;
+    move_uploaded_file($file['tmp_name'], $originalPath);
 
+    // Resize image if needed
+    if ($resize || $width || $height) {
+        resizeImage($originalPath, $originalPath, $width, $height);
+    }
 
-    /* small */
-    $directoryThumbnail = public_path() .'/'. $dir;
-    if (is_dir($directoryThumbnail) != true) \File::makeDirectory($directoryThumbnail, $mode = 0775, true);
-    $imageSmall = Image::make(Request::file($input));
-    $imageSmall = $image->resize(70, null, function ($constraintThumbnail) {
-        $constraintThumbnail->aspectRatio();
-    });
-    $imageSmall->save($directoryThumbnail . '/' . $fileSmall, 50);
+    // Create medium thumbnail
+    $thumbnailPath = $directory . '/' . $fileThumbnail;
+    resizeImage($originalPath, $thumbnailPath, 500, 500);
 
+    // Create small thumbnail
+    $smallPath = $directory . '/' . $fileSmall;
+    resizeImage($originalPath, $smallPath, 70, null);
 
+    // Return the original filename
     return $fileName;
 }
 
+function resizeImage($sourcePath, $destinationPath, $targetWidth = null, $targetHeight = null)
+{
+    // Load the image
+    list($originalWidth, $originalHeight, $imageType) = getimagesize($sourcePath);
+    $image = createImageFromType($sourcePath, $imageType);
+
+    // Calculate new dimensions
+    if (!$targetWidth && !$targetHeight) {
+        $targetWidth = $originalWidth;
+        $targetHeight = $originalHeight;
+    } elseif (!$targetWidth) {
+        $targetWidth = ($targetHeight / $originalHeight) * $originalWidth;
+    } elseif (!$targetHeight) {
+        $targetHeight = ($targetWidth / $originalWidth) * $originalHeight;
+    } else {
+        $aspectRatio = $originalWidth / $originalHeight;
+        if ($targetWidth / $targetHeight > $aspectRatio) {
+            $targetWidth = $targetHeight * $aspectRatio;
+        } else {
+            $targetHeight = $targetWidth / $aspectRatio;
+        }
+    }
+
+    // Create resized image
+    $resizedImage = imagecreatetruecolor($targetWidth, $targetHeight);
+    imagecopyresampled($resizedImage, $image, 0, 0, 0, 0, $targetWidth, $targetHeight, $originalWidth, $originalHeight);
+
+    // Save the resized image
+    saveImageFromType($resizedImage, $destinationPath, $imageType);
+
+    // Free memory
+    imagedestroy($image);
+    imagedestroy($resizedImage);
+}
+
+function createImageFromType($filePath, $imageType)
+{
+    switch ($imageType) {
+        case IMAGETYPE_JPEG:
+            return imagecreatefromjpeg($filePath);
+        case IMAGETYPE_PNG:
+            return imagecreatefrompng($filePath);
+        case IMAGETYPE_GIF:
+            return imagecreatefromgif($filePath);
+        default:
+            throw new Exception('Unsupported image type');
+    }
+}
+
+function saveImageFromType($image, $filePath, $imageType)
+{
+    switch ($imageType) {
+        case IMAGETYPE_JPEG:
+            imagejpeg($image, $filePath, 100);
+            break;
+        case IMAGETYPE_PNG:
+            imagepng($image, $filePath);
+            break;
+        case IMAGETYPE_GIF:
+            imagegif($image, $filePath);
+            break;
+        default:
+            throw new Exception('Unsupported image type');
+    }
+}
 function removeImage($dir)
 {
     $f1 =  $dir ;

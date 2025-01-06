@@ -39,4 +39,6 @@ Route::prefix(getSystemPrefix())->middleware(['auth', 'permission.routes'])->gro
     Route::resource('/post-categories', PostCategoryController::class, ['except' => ['show']]);
     Route::resource('/posts', PostController::class, ['except' => ['show']]);
     Route::resource('/testimonials', TestimonialController::class);
+    Route::get('/file-manager', [\App\Http\Controllers\System\FileManagerController::class, 'index'])->name('file-manager.index');
+
 });

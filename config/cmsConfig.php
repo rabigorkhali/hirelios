@@ -10,6 +10,7 @@ $userBaseUrl = '/users';
 $roleBaseUrl = '/roles';
 $configBaseUrl = '/configs';
 $pageBaseUrl = '/pages';
+$fileManagerUrl = '/file-manager';
 $postCategoryUrl = '/post-categories';
 $postUrl = '/posts';
 $testimonialUrl = '/testimonials';
@@ -194,7 +195,7 @@ return [
                     ],
                 ],
                 [
-                    'name' => 'Create Page',
+                    'name' => 'Create Testimonial',
                     'route' => [
                         [
                             'url' => $testimonialUrl . '/create',
@@ -207,7 +208,7 @@ return [
                     ],
                 ],
                 [
-                    'name' => 'Edit Page',
+                    'name' => 'Edit Testimonial',
                     'route' => [
                         [
                             'url' => $testimonialUrl . '/*/edit',
@@ -220,7 +221,7 @@ return [
                     ],
                 ],
                 [
-                    'name' => 'Delete Users',
+                    'name' => 'Delete Testimonial',
                     'route' => [
                         'url' => $pageBaseUrl . '/*',
                         'method' => $deleteMethod,
@@ -366,6 +367,25 @@ return [
 
         ],
         [
+            'name' => 'File Manager',
+            'icon' => "<i class='fa fa-folder'></i>",
+            'hasSubmodules' => false,
+            'route' => $fileManagerUrl,
+            'routeIndexName' => 'file-manager.index',
+            'routeName' => 'file-manager',
+            'permissions' => [
+                [
+                    'name' => 'Manager File Manager',
+                    'route' => [
+                        'url' => $fileManagerUrl,
+                        'method' => $getMethod,
+                    ],
+                ],
+            ],
+
+        ],
+
+        [
             'name' => 'Settings',
             'icon' => "<i class='fa fa-cogs' aria-hidden='true'></i>",
             'hasSubmodules' => true,
@@ -377,7 +397,7 @@ return [
                     'route' => $configBaseUrl,
                     'routeIndexName' => 'configs.index',
                     'routeName' => 'configs',
-                    'hasSubmodules' => false,
+                    'hasSubmodules' => true,
                     'permissions' => [
                         [
                             'name' => 'View Configs',
