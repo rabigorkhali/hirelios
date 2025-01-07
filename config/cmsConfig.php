@@ -233,7 +233,7 @@ return [
         ],
         [
             'name' => 'Team',
-            'icon' => "<i class='fa fa-user-group'></i>",
+            'icon' => "<i class='fa fa-users'></i>",
             'hasSubmodules' => false,
             'route' => $teamUrl,
             'routeIndexName' => 'teams.index',
