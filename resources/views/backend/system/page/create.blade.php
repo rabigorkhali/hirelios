@@ -23,7 +23,7 @@
                         <label class="form-label" for="slug">{{ __('Slug') }}</label> *
                         <input required readonly value="{{ old('slug') }}" type="text" name="slug" id="slug"
                                class="form-control @if ($errors->first('slug')) is-invalid @endif"
-                               placeholder="Slug" />
+                               placeholder="Slug"/>
                         <div class="invalid-feedback">{{ $errors->first('slug') }}</div>
                     </div>
 
@@ -35,7 +35,31 @@
                                   placeholder="Body">{{ old('body') }}</textarea>
                         <div class="invalid-feedback">{{ $errors->first('body') }}</div>
                     </div>
+                    <div class="col-md-6">
+                        <label class="form-label" for="meta_title">{{ __('Meta Title') }}</label>
+                        <textarea name="meta_title" id="meta_title" rows="3"
+                                  class="form-control @if ($errors->first('meta_title')) is-invalid @endif"
+                                  placeholder="Meta Title">{{ old('meta_title') }}</textarea>
+                        <div class="invalid-feedback">{{ $errors->first('meta_title') }}</div>
+                    </div>
 
+                    <!-- Meta Keywords Field (Text Area) -->
+                    <div class="col-md-6">
+                        <label class="form-label" for="meta_keywords">{{ __('Meta Keywords') }}</label>
+                        <textarea name="meta_keywords" id="meta_keywords" rows="3"
+                                  class="form-control @if ($errors->first('meta_keywords')) is-invalid @endif"
+                                  placeholder="Meta Keywords">{{ old('meta_keywords') }}</textarea>
+                        <div class="invalid-feedback">{{ $errors->first('meta_keywords') }}</div>
+                    </div>
+
+                    <!-- Meta Description Field (Text Area) -->
+                    <div class="col-md-6">
+                        <label class="form-label" for="meta_description">{{ __('Meta Description') }}</label>
+                        <textarea name="meta_description" id="meta_description" rows="3"
+                                  class="form-control @if ($errors->first('meta_description')) is-invalid @endif"
+                                  placeholder="Meta Description">{{ old('meta_description') }}</textarea>
+                        <div class="invalid-feedback">{{ $errors->first('meta_description') }}</div>
+                    </div>
                     <!-- Status Field -->
                     <div class="col-md-6">
                         <label class="form-label w-100" for="status">{{ __('Status') }}</label>

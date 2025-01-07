@@ -6,7 +6,8 @@
         <div class="card mb-4">
             <h5 class="card-header">{{ $title }}</h5>
 
-            <form class="card-body" action="{{ route('pages.update', $thisData->id) }}" method="post" enctype="multipart/form-data">
+            <form class="card-body" action="{{ route('pages.update', $thisData->id) }}" method="post"
+                  enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                 <input type="hidden" name="id" value="{{ $thisData->id }}">
@@ -37,7 +38,30 @@
                                   placeholder="Program Body">{{ $thisData->body ?? '' }}</textarea>
                         <div class="invalid-feedback">{{ $errors->first('body') }}</div>
                     </div>
+                    <div class="col-md-6">
+                        <label class="form-label" for="meta_title">{{ __('Meta Title') }}</label>
+                        <textarea name="meta_title" id="meta_keywords" rows="3"
+                                  class="form-control @if ($errors->first('meta_title')) is-invalid @endif"
+                                  placeholder="Meta Title">{{ $thisData->meta_title ?? '' }}</textarea>
+                        <div class="invalid-feedback">{{ $errors->first('meta_title') }}</div>
+                    </div>
+                    <!-- Meta Keywords Field (Text Area) -->
+                    <div class="col-md-6">
+                        <label class="form-label" for="meta_keywords">{{ __('Meta Keywords') }}</label>
+                        <textarea name="meta_keywords" id="meta_keywords" rows="3"
+                                  class="form-control @if ($errors->first('meta_keywords')) is-invalid @endif"
+                                  placeholder="Meta Keywords">{{ $thisData->meta_keywords ?? '' }}</textarea>
+                        <div class="invalid-feedback">{{ $errors->first('meta_keywords') }}</div>
+                    </div>
 
+                    <!-- Meta Description Field (Text Area) -->
+                    <div class="col-md-6">
+                        <label class="form-label" for="meta_description">{{ __('Meta Description') }}</label>
+                        <textarea name="meta_description" id="meta_description" rows="3"
+                                  class="form-control @if ($errors->first('meta_description')) is-invalid @endif"
+                                  placeholder="Meta Description">{{ $thisData->meta_description ?? '' }}</textarea>
+                        <div class="invalid-feedback">{{ $errors->first('meta_description') }}</div>
+                    </div>
                     <!-- Status Field -->
                     <div class="col-md-6">
                         <label class="form-label w-100" for="status">{{ __('Status') }}</label>
@@ -56,9 +80,9 @@
                         <div class="invalid-feedback">{{ $errors->first('status') }}</div>
                     </div>
 
-                <div class="pt-4">
-                    <button type="submit" class="btn btn-primary me-sm-3 me-1">{{ __('Update') }}</button>
-                </div>
+                    <div class="pt-4">
+                        <button type="submit" class="btn btn-primary me-sm-3 me-1">{{ __('Update') }}</button>
+                    </div>
             </form>
         </div>
     </div>
