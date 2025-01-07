@@ -15,6 +15,7 @@ $postCategoryUrl = '/post-categories';
 $postUrl = '/posts';
 $testimonialUrl = '/testimonials';
 $teamUrl = '/teams';
+$contactUsUrl = '/contact-us';
 
 return [
     // routes entered in this array are accessible by any user no matter what role is given
@@ -68,6 +69,30 @@ return [
                     'route' => [
                         'url' => $homeBaseUrl,
                         'method' => $getMethod,
+                    ],
+                ]
+            ],
+        ],
+        [
+            'name' => 'Contact Us',
+            'icon' => "<i class='fa fa-phone'></i>",
+            'hasSubmodules' => false,
+            'route' => $contactUsUrl,
+            'routeIndexName' => 'contact-us.index',
+            'routeName' => 'contact-us',
+            'permissions' => [
+                [
+                    'name' => 'View Contact Us',
+                    'route' => [
+                        'url' => $contactUsUrl,
+                        'method' => $getMethod,
+                    ],
+                ],
+                [
+                    'name' => 'Delete Contact Us',
+                    'route' => [
+                        'url' => $contactUsUrl . '/*',
+                        'method' => $deleteMethod,
                     ],
                 ]
             ],

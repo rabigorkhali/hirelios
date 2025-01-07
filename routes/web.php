@@ -11,6 +11,7 @@ use App\Http\Controllers\System\PostCategoryController;
 use App\Http\Controllers\System\PostController;
 use App\Http\Controllers\System\TestimonialController;
 use App\Http\Controllers\System\TeamController;
+use App\Http\Controllers\System\ContactUsController;
 
 
 //Route::get('/', function () {
@@ -42,5 +43,6 @@ Route::prefix(getSystemPrefix())->middleware(['auth', 'permission.routes'])->gro
     Route::resource('/testimonials', TestimonialController::class);
     Route::resource('/teams',controller:  TeamController::class);
     Route::get('/file-manager', [\App\Http\Controllers\System\FileManagerController::class, 'index'])->name('file-manager.index');
+    Route::resource('/contact-us', ContactUsController::class);
 
 });
