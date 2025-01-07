@@ -16,6 +16,7 @@ $postUrl = '/posts';
 $testimonialUrl = '/testimonials';
 $teamUrl = '/teams';
 $contactUsUrl = '/contact-us';
+$eventUrl = '/events';
 
 return [
     // routes entered in this array are accessible by any user no matter what role is given
@@ -71,6 +72,51 @@ return [
                         'method' => $getMethod,
                     ],
                 ]
+            ],
+        ],
+        [
+            'name' => ' Events',
+            'icon' => "<i class='fa fa-cube'></i>",
+            'hasSubmodules' => false,
+            'route' => $eventUrl,
+            'routeIndexName' => 'events.index',
+            'routeName' => 'events',
+            'permissions' => [
+                [
+                    'name' => 'View Event',
+                    'route' => [
+                        'url' => $eventUrl,
+                        'method' => $getMethod,
+                    ],
+                ],
+                [
+                    'name' => 'Create Event',
+                    'route' => [
+                        'url' => $eventUrl,
+                        'method' => $postMethod,
+                    ],
+                ],
+                [
+                    'name' => 'Edit Event',
+                    'route' => [
+                        'url' => $eventUrl . '/*',
+                        'method' => $putMethod,
+                    ],
+                ],
+                [
+                    'name' => 'Delete Event',
+                    'route' => [
+                        'url' => $eventUrl . '/*',
+                        'method' => $deleteMethod,
+                    ],
+                ],
+                [
+                    'name' => 'Delete  Event Gallery',
+                    'route' => [
+                        'url' => $eventUrl . '/delete-gallery/*',
+                        'method' => $getMethod,
+                    ],
+                ],
             ],
         ],
         [
