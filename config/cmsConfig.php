@@ -17,6 +17,7 @@ $testimonialUrl = '/testimonials';
 $teamUrl = '/teams';
 $contactUsUrl = '/contact-us';
 $eventUrl = '/events';
+$menuBaseUrl = '/menus';
 
 return [
     // routes entered in this array are accessible by any user no matter what role is given
@@ -511,7 +512,7 @@ return [
             'name' => 'Settings',
             'icon' => "<i class='fa fa-cogs' aria-hidden='true'></i>",
             'hasSubmodules' => true,
-            'routeIndexNameMultipleSubMenu' => ['configs.index'],
+            'routeIndexNameMultipleSubMenu' => ['configs.index','menus.index'],
             'submodules' => [
                 [
                     'name' => 'Configs',
@@ -551,6 +552,45 @@ return [
                         ],
                     ],
                 ],
+                [
+                    'name' => 'Menu Builder',
+                    'icon' => '<i class="fa fa-menu" aria-hidden="true"></i>',
+                    'route' => $menuBaseUrl,
+                    'routeIndexName' => 'menus.index',
+                    'routeName' => 'menus',
+                    'hasSubmodules' => false,
+                    'permissions' => [
+                        [
+                            'name' => 'View Menu',
+                            'route' => [
+                                'url' => $menuBaseUrl,
+                                'method' => $getMethod,
+                            ],
+                        ],
+                        [
+                            'name' => 'Create Menu',
+                            'route' => [
+                                'url' => $menuBaseUrl,
+                                'method' => $postMethod,
+                            ],
+                        ],
+                        [
+                            'name' => 'Edit Menu',
+                            'route' => [
+                                'url' => $menuBaseUrl . '/*',
+                                'method' => $putMethod,
+                            ],
+                        ],
+                        [
+                            'name' => 'Delete Menu',
+                            'route' => [
+                                'url' => $menuBaseUrl . '/*',
+                                'method' => $deleteMethod,
+                            ],
+                        ],
+                    ],
+                ],
+
             ],
         ],
     ],

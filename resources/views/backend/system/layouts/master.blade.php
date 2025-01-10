@@ -17,6 +17,7 @@
         <div class="layout-page">
             @include('backend.system.partials.navbar')
             <div class="content-wrapper">
+                <div>
                 <h6 class="container-xxl  mt-4">
                     @if (isset($breadcrumbs))
                         @foreach ($breadcrumbs as $breadcrumbsDatum)
@@ -30,6 +31,7 @@
                     @endif
                 </h6>
                 @yield('content')
+                </div>
                 @include('backend.system.partials.footer')
             </div>
         </div>
