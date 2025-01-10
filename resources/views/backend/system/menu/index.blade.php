@@ -19,6 +19,8 @@
             editor.setUpdateButton($('#btnUpdate'));
             $('#btnReload').on('click', function () {
                 editor.setData(arrayjson);
+                var str = editor.getString();
+                $("#out").text(str);
             });
             $('#btnOutput').on('click', function () {
                 var str = editor.getString();
@@ -27,15 +29,25 @@
 
             $("#btnUpdate").click(function(){
                 editor.update();
+                var str = editor.getString();
+                $("#out").text(str);
             });
 
             $('#btnAdd').click(function(){
                 editor.add();
+                var str = editor.getString();
+                $("#out").text(str);
             });
             /* ====================================== */
 
             /** PAGE ELEMENTS **/
             $('[data-toggle="tooltip"]').tooltip();
+            $(document).on("mousemove", function (event) {
+                if (event.button === 0) { // Check for left mouse button
+                    var str = editor.getString(); // Get the string from the editor
+                    $("#out").text(str); // Set the text of the #out element
+                }
+            });
         });
     </script>
 @endsection
