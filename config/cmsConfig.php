@@ -507,7 +507,6 @@ return [
             ],
 
         ],
-
         [
             'name' => 'Settings',
             'icon' => "<i class='fa fa-cogs' aria-hidden='true'></i>",
@@ -520,7 +519,7 @@ return [
                     'route' => $configBaseUrl,
                     'routeIndexName' => 'configs.index',
                     'routeName' => 'configs',
-                    'hasSubmodules' => true,
+                    'hasSubmodules' => false,
                     'permissions' => [
                         [
                             'name' => 'View Configs',
@@ -554,6 +553,5 @@ return [
                 ],
             ],
         ],
-
     ],
 ];
