@@ -224,7 +224,7 @@ function uploadImage($dir, $inputName, $resize = false, $width = null, $height =
 
     // Create medium thumbnail
     $thumbnailPath = $directory . '/' . $fileThumbnail;
-    resizeImage($originalPath, $thumbnailPath, 500, 500);
+    resizeImage($originalPath, $thumbnailPath, 400, null);
 
     // Create small thumbnail
     $smallPath = $directory . '/' . $fileSmall;
