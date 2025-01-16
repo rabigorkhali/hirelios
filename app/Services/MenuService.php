@@ -23,6 +23,7 @@ class MenuService extends Service
 
     public function store($request)
     {
+        dd(1);
         $data = $request->except('_token');
         if ($request->hasFile('logo')) {
             $file = $request->file('logo');
@@ -51,39 +52,8 @@ class MenuService extends Service
     {
         $data = $request->except('_token');
         $update = $this->itemByIdentifier($id);
-        $faviconPath = $update->favicon ?? null;
-        $logoPath = $update->logo ?? null;
-        $bankQrPath = $update->bank_qr ?? null;
-        if ($request->hasFile('favicon')) {
-            if ($faviconPath && file_exists(public_path($faviconPath))) {
-                unlink(public_path($faviconPath));
-            }
-            $file = $request->file('favicon');
-            $filename = time().'.'.$file->getClientOriginalExtension();
-            $file->move(public_path(getImageUploadFirstLevelPath().'/'.strtolower(class_basename(get_class($this->model)))), $filename);
-            $data['favicon'] = getImageUploadFirstLevelPath().'/'.strtolower(class_basename(get_class($this->model))).'/'.$filename;
-        }
-        if ($request->hasFile('bank_qr')) {
-            if ($bankQrPath && file_exists(public_path($bankQrPath))) {
-                unlink(public_path($bankQrPath));
-            }
-            $file = $request->file('bank_qr');
-            $filename = time().'.'.$file->getClientOriginalExtension();
-            $file->move(public_path(getImageUploadFirstLevelPath().'/'.strtolower(class_basename(get_class($this->model)))), $filename);
-            $data['bank_qr'] = getImageUploadFirstLevelPath().'/'.strtolower(class_basename(get_class($this->model))).'/'.$filename;
-        }
-        if ($request->hasFile('logo')) {
-            if ($logoPath && file_exists(public_path($logoPath))) {
-                unlink(public_path($logoPath));
-            }
-            $file = $request->file('logo');
-            $filename = time().'.'.$file->getClientOriginalExtension();
-            $file->move(public_path(getImageUploadFirstLevelPath().'/'.strtolower(class_basename(get_class($this->model)))), $filename);
-            $data['logo'] = getImageUploadFirstLevelPath().'/'.strtolower(class_basename(get_class($this->model))).'/'.$filename;
-        }
         $update->fill($data)->save();
         $update = $this->itemByIdentifier($id);
-
         return $update;
     }
 

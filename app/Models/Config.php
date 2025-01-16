@@ -41,5 +41,7 @@ class Config extends Model
         'map_url',
         'video_url',
         'secondary_logo',
+        'menu_json',
+        'footer_json',
     ];
 }
