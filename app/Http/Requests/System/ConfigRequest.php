@@ -27,6 +27,7 @@ class ConfigRequest extends FormRequest
             $validate = [
                 'company_name' => 'required|string|max:255',
                 'logo' => 'nullable|image|max:10240',
+                'secondary_logo' => 'nullable|image|max:10240',
                 'favicon' => 'nullable|image|max:100',
                 'all_rights_reserved_text' => 'nullable|string|max:255',
                 'address_line_1' => 'required|string|max:255',

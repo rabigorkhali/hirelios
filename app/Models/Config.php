@@ -32,11 +32,14 @@ class Config extends Model
         'facebook_url',
         'instagram_url',
         'linkedin_url',
-        'top_donors_text',
+        'youtube_url',
         'keywords',
         'bank_name',
         'bank_account_number',
         'bank_account_name',
-        'bank_qr'
+        'bank_qr',
+        'map_url',
+        'video_url',
+        'secondary_logo',
     ];
 }

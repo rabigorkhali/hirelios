@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('company_name');
             $table->string('logo')->nullable();
+            $table->string('secondary_logo')->nullable();
             $table->string('favicon')->nullable();
             $table->text('all_rights_reserved_text')->nullable();
             $table->string('address_line_1');
@@ -35,7 +36,9 @@ return new class extends Migration
             $table->string('facebook_url')->nullable();
             $table->string('instagram_url')->nullable();
             $table->string('linkedin_url')->nullable();
-            $table->text('top_donors_text')->nullable();
+            $table->string('youtube_url')->nullable();
+            $table->text('map_url')->nullable();
+            $table->text('video_url')->nullable();
             $table->string('keywords')->nullable();
             // Bank-related fields
             $table->string('bank_name')->nullable();

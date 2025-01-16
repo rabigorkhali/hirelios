@@ -184,12 +184,28 @@
                     </div>
 
                     <div class="col-md-6">
-                        <label class="form-label" for="top_donors_text">{{ 'Top Donors Text' }}</label>
-                        <input value="{{ $thisData?->top_donors_text ?? old('top_donors_text') }}"
-                               type="text" name="top_donors_text" id="top_donors_text"
-                               class="form-control @if ($errors->first('top_donors_text')) is-invalid @endif"
-                               placeholder="Top Donors Text"/>
-                        <div class="invalid-feedback">{{ $errors->first('top_donors_text') }}</div>
+                        <label class="form-label" for="youtube_url">{{ 'Youtube URL' }}</label>
+                        <input value="{{ $thisData?->youtube_url ?? old('youtube_url') }}"
+                               type="text" name="youtube_url" id="youtube_url"
+                               class="form-control @if ($errors->first('youtube_url')) is-invalid @endif"
+                               placeholder="Youtube URL"/>
+                        <div class="invalid-feedback">{{ $errors->first('youtube_url') }}</div>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label" for="map_url">{{ 'Map URL' }}</label>
+                        <input value="{{ $thisData?->map_url ?? old('map_url') }}"
+                               type="text" name="map_url" id="map_url"
+                               class="form-control @if ($errors->first('map_url')) is-invalid @endif"
+                               placeholder="Map URL"/>
+                        <div class="invalid-feedback">{{ $errors->first('map_url') }}</div>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label" for="linkedin_url">{{ 'Video URL' }}</label>
+                        <input value="{{ $thisData?->video_url ?? old('video_url') }}"
+                               type="text" name="video_url" id="video_url"
+                               class="form-control @if ($errors->first('video_url')) is-invalid @endif"
+                               placeholder="Video URL"/>
+                        <div class="invalid-feedback">{{ $errors->first('video_url') }}</div>
                     </div>
 
                     <div class="col-md-12">
@@ -217,6 +233,17 @@
                     @if($thisData?->logo)
                         <a target="_blank" href="{{ asset($thisData?->logo) }}"> <img
                                 src="{{ asset($thisData?->logo) }}" style="width: auto; height:60px;" alt="Logo"
+                                class="img-fluid"></a>
+                    @endif
+                    <div class="col-md-6">
+                        <label class="form-label" for="logo">{{ 'Secondary Logo' }}</label>
+                        <input value="{{ $thisData?->secondary_logo ?? old('secondary_logo') }}" type="file" name="secondary_logo"
+                               id="logo" class="form-control @if ($errors->first('secondary_logo')) is-invalid @endif"/>
+                        <div class="invalid-feedback">{{ $errors->first('secondary_logo') }}</div>
+                    </div>
+                    @if($thisData?->secondary_logo)
+                        <a target="_blank" href="{{ asset($thisData?->secondary_logo) }}"> <img
+                                src="{{ asset($thisData?->secondary_logo) }}" style="width: auto; height:60px;" alt="Logo"
                                 class="img-fluid"></a>
                     @endif
                     <div class="col-md-6">

@@ -23,6 +23,9 @@ Route::get('/', [\App\Http\Controllers\Public\IndexController::class, 'index'])-
 
 
 Auth::routes();
+Route::get('admin', [App\Http\Controllers\Auth\LoginController::class, 'showLoginForm']);
+Route::post('admin', [App\Http\Controllers\Auth\LoginController::class, 'login']);
+
 Route::get('password/reset', [App\Http\Controllers\Auth\ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
 Route::post('password/email', [App\Http\Controllers\Auth\ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
 Route::get('password/reset/{token}', [App\Http\Controllers\Auth\ResetPasswordController::class, 'showResetForm'])->name('password.reset');
@@ -32,6 +35,7 @@ Route::prefix(getSystemPrefix())->middleware(['auth', 'permission.routes'])->gro
     Route::get('/home', [HomeController::class, 'index'])->name('home.index');
     Route::get('/admin', [HomeController::class, 'index'])->name('home.index');
     Route::get('/login', [HomeController::class, 'index'])->name('home.index');
+    Route::get('/admin', [HomeController::class, 'index'])->name('home.index');
     Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
     Route::resource('/profile', ProfileController::class)->except(['show']);
     Route::get('/change-password', [ProfileController::class,'changePassword'])->name('change.password');

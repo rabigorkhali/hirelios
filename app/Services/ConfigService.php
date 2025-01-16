@@ -31,6 +31,13 @@ class ConfigService extends Service
             $data['logo'] = getImageUploadFirstLevelPath().'/'.strtolower(class_basename(get_class($this->model))).'/'.$filename;
         }
 
+        if ($request->hasFile('secondary_logo')) {
+            $file = $request->file('secondary_logo');
+            $filename = time().'.'.$file->getClientOriginalExtension();
+            $file->move(public_path(getImageUploadFirstLevelPath().'/'.strtolower(class_basename(get_class($this->model)))), $filename);
+            $data['secondary_logo'] = getImageUploadFirstLevelPath().'/'.strtolower(class_basename(get_class($this->model))).'/'.$filename;
+        }
+
         if ($request->hasFile('favicon')) {
             $file = $request->file('favicon');
             $filename = time().'.'.$file->getClientOriginalExtension();
@@ -54,6 +61,7 @@ class ConfigService extends Service
         $faviconPath = $update->favicon ?? null;
         $logoPath = $update->logo ?? null;
         $bankQrPath = $update->bank_qr ?? null;
+        $secondaryPath = $update->secondary_logo ?? null;
         if ($request->hasFile('favicon')) {
             if ($faviconPath && file_exists(public_path($faviconPath))) {
                 unlink(public_path($faviconPath));
@@ -63,6 +71,17 @@ class ConfigService extends Service
             $file->move(public_path(getImageUploadFirstLevelPath().'/'.strtolower(class_basename(get_class($this->model)))), $filename);
             $data['favicon'] = getImageUploadFirstLevelPath().'/'.strtolower(class_basename(get_class($this->model))).'/'.$filename;
         }
+
+        if ($request->hasFile('secondary_logo')) {
+            if ($secondaryPath && file_exists(public_path($secondaryPath))) {
+                unlink(public_path($secondaryPath));
+            }
+            $file = $request->file('secondary_logo');
+            $filename = time().'.'.$file->getClientOriginalExtension();
+            $file->move(public_path(getImageUploadFirstLevelPath().'/'.strtolower(class_basename(get_class($this->model)))), $filename);
+            $data['secondary_logo'] = getImageUploadFirstLevelPath().'/'.strtolower(class_basename(get_class($this->model))).'/'.$filename;
+        }
+
         if ($request->hasFile('bank_qr')) {
             if ($bankQrPath && file_exists(public_path($bankQrPath))) {
                 unlink(public_path($bankQrPath));
