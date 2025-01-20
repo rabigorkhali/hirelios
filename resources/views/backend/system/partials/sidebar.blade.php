@@ -27,15 +27,15 @@
                            @endif
                         @endforeach
                     ">
-                        <a href="javascript:void(0);" class="menu-link menu-toggle">
+                        <a href="javascript:void(0);" class="menu-link menu-toggle text-decoration-none">
                             {!! $module['icon'] !!}
                             <div>&nbsp; {{__($module['name'])}}</div>
                         </a>
                         <ul class="menu-sub">
                             @foreach ($module['submodules'] as $subModule)
                                 @if(hasPermission('/'.$subModule['routeName']))
-                                    <li class="menu-item @if (str_contains(url()->current(),route($subModule['routeIndexName']))) active @endif">
-                                        <a href="{{ route($subModule['routeIndexName']) }}" class="menu-link">
+                                    <li class="text-decoration-none menu-item @if (str_contains(url()->current(),route($subModule['routeIndexName']))) active @endif">
+                                        <a href="{{ route($subModule['routeIndexName']) }}" class="menu-link text-decoration-none" >
                                             <div>{{__($subModule['name'])}}</div>
                                         </a>
                                     </li>
@@ -47,7 +47,7 @@
 
                 @else
                     <li class="menu-item @if (str_contains(url()->current(),route($module['routeIndexName']))) active @endif">
-                        <a href="{{route($module['routeIndexName'])}}" class="menu-link">
+                        <a href="{{route($module['routeIndexName'])}}" class="menu-link text-decoration-none">
                             {!! $module['icon'] !!}
                             <div>&nbsp; {{__($module['name'])}}</div>
                         </a>

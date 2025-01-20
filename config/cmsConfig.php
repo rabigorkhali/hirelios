@@ -18,6 +18,7 @@ $teamUrl = '/teams';
 $contactUsUrl = '/contact-us';
 $eventUrl = '/events';
 $menuBaseUrl = '/menus';
+$monitorUrl = '/monitor';
 
 return [
     // routes entered in this array are accessible by any user no matter what role is given
@@ -75,6 +76,7 @@ return [
                 ]
             ],
         ],
+
         [
             'name' => ' Events',
             'icon' => "<i class='fa fa-cube'></i>",
@@ -591,6 +593,23 @@ return [
                     ],
                 ],
 
+            ],
+        ],
+        [
+            'name' => 'Resource Monitor',
+            'icon' => "<i class='fa fa-campground'></i>",
+            'hasSubmodules' => false,
+            'route' => $monitorUrl,
+            'routeIndexName' => 'monitor.index',
+            'routeName' => 'monitor',
+            'permissions' => [
+                [
+                    'name' => 'View Resource Monitor',
+                    'route' => [
+                        'url' => $monitorUrl,
+                        'method' => $getMethod,
+                    ],
+                ]
             ],
         ],
     ],

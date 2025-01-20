@@ -14,6 +14,7 @@ use App\Http\Controllers\System\TeamController;
 use App\Http\Controllers\System\ContactUsController;
 use App\Http\Controllers\System\EventController;
 use App\Http\Controllers\System\MenuController;
+use App\Http\Controllers\System\ResourceMonitorController;
 
 
 //Route::get('/', function () {
@@ -53,5 +54,6 @@ Route::prefix(getSystemPrefix())->middleware(['auth', 'permission.routes'])->gro
     Route::resource('/events', EventController::class, ['except' => ['show']]);
     Route::get('/events/delete-gallery/{id}', [EventController::class,'deleteGallery'])->name('deleteGallery');
     Route::resource('/menus', MenuController::class, ['except' => ['show']]);
+    Route::get('monitor', [ResourceMonitorController::class, 'index'])->name('monitor.index');
 
 });
