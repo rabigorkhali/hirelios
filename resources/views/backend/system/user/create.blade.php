@@ -27,8 +27,8 @@
                     </div>
 
                     <div class="col-md-6">
-                        <label class="form-label" for="country">{{ 'Country' }}</label> *
-                        <select required name="country" class="form-control  @if ($errors->first('country')) is-invalid @endif">
+                        <label class="form-label" for="country">{{ 'Country' }}</label>
+                        <select  name="country" class="form-control  @if ($errors->first('country')) is-invalid @endif">
                             <option value="">{{__('None')}}</option>
                             <option @if(old('country')=='nepal') selected @endif value="nepal">{{__('Nepal')}}</option>
                             <option @if(old('country')=='india') selected @endif value="india">{{__('India')}}</option>
@@ -38,15 +38,15 @@
                     </div>
 
                     <div class="col-md-6">
-                        <label class="form-label" for="address">{{ 'Address' }}</label> *
-                        <input required value="{{ old('address') }}" type="text" name="address" id="address"
+                        <label class="form-label" for="address">{{ 'Address' }}</label>
+                        <input  value="{{ old('address') }}" type="text" name="address" id="address"
                                class="form-control @if ($errors->first('address')) is-invalid @endif"
                                placeholder="Address"/>
                         <div class="invalid-feedback">{{ $errors->first('address') }}</div>
                     </div>
                     <div class="col-md-6">
-                        <label class="form-label" for="mobile_number">{{ __('Mobile Number') }}</label> *
-                        <input min="10" required value="{{ old('mobile_number') }}" type="text" name="mobile_number"
+                        <label class="form-label" for="mobile_number">{{ __('Mobile Number') }}</label>
+                        <input min="10"  value="{{ old('mobile_number') }}" type="text" name="mobile_number"
                                max="15"
                                id="mobile_number"
                                class="form-control @if ($errors->first('mobile_number')) is-invalid @endif"
@@ -55,16 +55,16 @@
                     </div>
 
                     <div class="col-md-6">
-                        <label class="form-label" for="date_of_birth">{{ __('DOB') }}</label> *
-                        <input required value="{{ old('date_of_birth') }}" type="date" name="date_of_birth"
+                        <label class="form-label" for="date_of_birth">{{ __('DOB') }}</label>
+                        <input  value="{{ old('date_of_birth') }}" type="date" name="date_of_birth"
                                id="date_of_birth"
                                class="form-control @if ($errors->first('date_of_birth')) is-invalid @endif"
                                placeholder="Date of Birth"/>
                         <div class="invalid-feedback">{{ $errors->first('date_of_birth') }}</div>
                     </div>
                     <div class="col-md-6">
-                        <label class="form-label" for="gender">{{ __('Gender') }}</label> *
-                        <select required class="form-control @if ($errors->first('gender')) is-invalid @endif" name="gender">
+                        <label class="form-label" for="gender">{{ __('Gender') }}</label>
+                        <select  class="form-control @if ($errors->first('gender')) is-invalid @endif" name="gender">
                             <option value="">{{__('None')}}</option>
                             <option value="male" @if(old('gender')=='male') selected @endif>{{__('Male')}}</option>
                             <option value="female" @if(old('gender')=='female') selected @endif>{{__('Female')}}</option>

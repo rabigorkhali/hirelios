@@ -37,7 +37,7 @@
                                                 <button type="submit" class="btn btn-primary mx-3">
                                                     <span><i class="ti ti-filter me-1 ti-xs"></i>Filter</span>
                                                 </button>
-                                                @if(hasPermission('/' . strtolower($title) . '/*', 'put'))
+                                                @if(hasPermission('/'.str_replace(' ','-',strtolower($title)),'post'))
                                                     <a class="btn add-new btn-primary text-white" href="{{ route('teams.create') }}">
                                                         <i class="ti ti-plus me-0 me-sm-1 ti-xs"></i>
                                                         <span class="d-none d-sm-inline-block">Add</span>
@@ -79,16 +79,16 @@
                                             </span>
                                         </td>
                                         <td>
-                                            @if(hasPermission('/' . strtolower($title) . '/*', 'put') || hasPermission('/' . strtolower($title) . '/*', 'delete'))
+                                            @if(hasPermission('/' . str_replace(' ','-',strtolower($title)) . '/*', 'put') || hasPermission('/' . str_replace(' ','-',strtolower($title)) . '/*', 'delete'))
                                                 <div class="dropdown">
                                                     <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
                                                         <i class="ti ti-dots-vertical"></i>
                                                     </button>
                                                     <div class="dropdown-menu">
-                                                        @if(hasPermission('/' . strtolower($title) . '/*', 'put'))
+                                                        @if(hasPermission('/' . str_replace(' ','-',strtolower($title)) . '/*', 'put'))
                                                             <a class="dropdown-item" href="{{ route('teams.edit', $team->id) }}"><i class="ti ti-pencil me-1"></i>{{ __('Edit') }}</a>
                                                         @endif
-                                                        @if(hasPermission('/' . strtolower($title) . '/*', 'delete'))
+                                                        @if(hasPermission('/' . str_replace(' ','-',strtolower($title)) . '/*', 'delete'))
                                                             <a href="#" class="dropdown-item delete-button" data-bs-toggle="modal" data-actionurl="{{ route('teams.destroy', $team->id) }}" data-bs-target="#deleteModal">
                                                                 <i class="ti ti-trash me-1"></i>{{ __('Delete') }}
                                                             </a>

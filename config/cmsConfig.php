@@ -95,15 +95,27 @@ return [
                 [
                     'name' => 'Create Event',
                     'route' => [
-                        'url' => $eventUrl,
-                        'method' => $postMethod,
+                        [
+                            'url' => $eventUrl . '/create',
+                            'method' => $getMethod,
+                        ],
+                        [
+                            'url' => $eventUrl,
+                            'method' => $postMethod,
+                        ],
                     ],
                 ],
                 [
                     'name' => 'Edit Event',
                     'route' => [
-                        'url' => $eventUrl . '/*',
-                        'method' => $putMethod,
+                        [
+                            'url' => $eventUrl . '/*/edit',
+                            'method' => $getMethod,
+                        ],
+                        [
+                            'url' => $eventUrl . '/*',
+                            'method' => $putMethod,
+                        ],
                     ],
                 ],
                 [
@@ -380,15 +392,27 @@ return [
                         [
                             'name' => 'Create Category',
                             'route' => [
-                                'url' => $postCategoryUrl,
-                                'method' => $postMethod,
+                                [
+                                    'url' => $postCategoryUrl . '/create',
+                                    'method' => $getMethod,
+                                ],
+                                [
+                                    'url' => $postCategoryUrl,
+                                    'method' => $postMethod,
+                                ],
                             ],
                         ],
                         [
                             'name' => 'Edit Category',
                             'route' => [
-                                'url' => $postCategoryUrl . '/*',
-                                'method' => $putMethod,
+                                [
+                                    'url' => $postCategoryUrl . '/*/edit',
+                                    'method' => $getMethod,
+                                ],
+                                [
+                                    'url' => $postCategoryUrl . '/*',
+                                    'method' => $putMethod,
+                                ],
                             ],
                         ],
                         [
@@ -418,15 +442,27 @@ return [
                         [
                             'name' => 'Create Post',
                             'route' => [
-                                'url' => $postUrl,
-                                'method' => $postMethod,
+                                [
+                                    'url' => $postUrl . '/create',
+                                    'method' => $getMethod,
+                                ],
+                                [
+                                    'url' => $postUrl,
+                                    'method' => $postMethod,
+                                ],
                             ],
                         ],
                         [
                             'name' => 'Edit Post',
                             'route' => [
-                                'url' => $postUrl . '/*',
-                                'method' => $putMethod,
+                                [
+                                    'url' => $postUrl . '/*/edit',
+                                    'method' => $getMethod,
+                                ],
+                                [
+                                    'url' => $postUrl . '/*',
+                                    'method' => $putMethod,
+                                ],
                             ],
                         ],
                         [
