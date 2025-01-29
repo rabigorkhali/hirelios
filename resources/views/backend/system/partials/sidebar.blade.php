@@ -1,10 +1,12 @@
 <!-- Menu -->
 <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
     <div class="app-brand demo">
-        <a href="index.html" class="app-brand-link">
-           <span class="app-brand-logo demo">
+        <a href="{{url('/')}}" class="app-brand-link">
+            @if(getConfigTableData()?->logo)
+                <span class="app-brand-logo demo">
                <img src="{{asset(getConfigTableData()?->logo)}}" class="img-fluid">
            </span>
+            @endif
             <span class="app-brand-text demo menu-text fw-bold fs-6">{{getConfigTableData()?->company_name}}</span>
         </a>
 
@@ -35,7 +37,8 @@
                             @foreach ($module['submodules'] as $subModule)
                                 @if(hasPermission('/'.$subModule['routeName']))
                                     <li class="text-decoration-none menu-item @if (str_contains(url()->current(),route($subModule['routeIndexName']))) active @endif">
-                                        <a href="{{ route($subModule['routeIndexName']) }}" class="menu-link text-decoration-none" >
+                                        <a href="{{ route($subModule['routeIndexName']) }}"
+                                           class="menu-link text-decoration-none">
                                             <div>{{__($subModule['name'])}}</div>
                                         </a>
                                     </li>

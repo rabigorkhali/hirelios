@@ -15,6 +15,8 @@ return Application::configure(basePath: dirname(__DIR__))
             'permission.routes' => \App\Http\Middleware\PermissionRoutes::class,
         ]);
         $middleware->append(\App\Http\Middleware\RedirectionMiddleware::class);
+        $middleware->prepend(\App\Http\Middleware\LogRouteAccess::class);
+
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //

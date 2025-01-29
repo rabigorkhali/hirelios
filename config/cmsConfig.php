@@ -20,6 +20,7 @@ $eventUrl = '/events';
 $menuBaseUrl = '/menus';
 $monitorUrl = '/monitor';
 $redirectionUrl = '/redirections';
+$activityUrl = '/activities';
 
 return [
     // routes entered in this array are accessible by any user no matter what role is given
@@ -577,6 +578,23 @@ return [
                         'method' => $deleteMethod,
                     ],
                 ]
+            ],
+        ],
+        [
+            'name' => ' Activities Tracking',
+            'icon' => "<i class='fa fa-video-camera'></i>",
+            'hasSubmodules' => false,
+            'route' => $eventUrl,
+            'routeIndexName' => 'activities.index',
+            'routeName' => 'activities',
+            'permissions' => [
+                [
+                    'name' => 'View Activity',
+                    'route' => [
+                        'url' => $eventUrl,
+                        'method' => $getMethod,
+                    ],
+                ],
             ],
         ],
         [
