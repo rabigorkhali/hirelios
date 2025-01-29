@@ -35,4 +35,13 @@
             jQuery(".ml-2.text-lg.sm\\:text-2xl.text-gray-700.dark\\:text-gray-300.font-medium").empty();
         });
     </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const element = document.querySelector(".bg-gray-50.dark\\:bg-gray-950");
+            if (element) {
+                element.classList.replace("dark:bg-gray-950", "dark:bg-white-950");
+            }
+        });
+    </script>
 @endsection
