@@ -19,6 +19,7 @@ $contactUsUrl = '/contact-us';
 $eventUrl = '/events';
 $menuBaseUrl = '/menus';
 $monitorUrl = '/monitor';
+$redirectionUrl = '/redirections';
 
 return [
     // routes entered in this array are accessible by any user no matter what role is given
@@ -527,6 +528,56 @@ return [
                 ]
             ],
 
+        ],
+        [
+            'name' => 'Redirection',
+            'icon' => "<i class='fa fa-link'></i>",
+            'hasSubmodules' => false,
+            'route' => $redirectionUrl,
+            'routeIndexName' => 'redirections.index',
+            'routeName' => 'redirections',
+            'permissions' => [
+                [
+                    'name' => 'View Redirection',
+                    'route' => [
+                        'url' => $redirectionUrl,
+                        'method' => $getMethod,
+                    ],
+                ],
+                [
+                    'name' => 'Create Redirection',
+                    'route' => [
+                        [
+                            'url' => $redirectionUrl . '/create',
+                            'method' => $getMethod,
+                        ],
+                        [
+                            'url' => $redirectionUrl,
+                            'method' => $postMethod,
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Edit Redirection',
+                    'route' => [
+                        [
+                            'url' => $redirectionUrl . '/*/edit',
+                            'method' => $getMethod,
+                        ],
+                        [
+                            'url' => $redirectionUrl . '/*',
+                            'method' => $putMethod,
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Delete Redirection',
+                    'route' => [
+                        'url' => $redirectionUrl . '/*',
+                        'method' => $deleteMethod,
+                    ],
+                ]
+            ],
         ],
         [
             'name' => 'File Manager',

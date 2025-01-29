@@ -15,6 +15,7 @@ use App\Http\Controllers\System\ContactUsController;
 use App\Http\Controllers\System\EventController;
 use App\Http\Controllers\System\MenuController;
 use App\Http\Controllers\System\ResourceMonitorController;
+use App\Http\Controllers\System\RedirectionController;
 
 
 //Route::get('/', function () {
@@ -55,5 +56,6 @@ Route::prefix(getSystemPrefix())->middleware(['auth', 'permission.routes'])->gro
     Route::get('/events/delete-gallery/{id}', [EventController::class,'deleteGallery'])->name('deleteGallery');
     Route::resource('/menus', MenuController::class, ['except' => ['show']]);
     Route::get('monitor', [ResourceMonitorController::class, 'index'])->name('monitor.index');
+    Route::resource('/redirections', RedirectionController::class);
 
 });
