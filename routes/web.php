@@ -35,7 +35,7 @@ Route::post('password/email', [App\Http\Controllers\Auth\ForgotPasswordControlle
 Route::get('password/reset/{token}', [App\Http\Controllers\Auth\ResetPasswordController::class, 'showResetForm'])->name('password.reset');
 Route::post('password/reset', [App\Http\Controllers\Auth\ResetPasswordController::class, 'reset'])->name('password.update');
 
-Route::prefix(getSystemPrefix())->middleware(['auth', 'permission.routes'])->group(function () {
+Route::prefix(getSystemPrefix())->middleware(['auth', 'permission.routes','log'])->group(function () {
     Route::get('/home', [HomeController::class, 'index'])->name('home.index');
     Route::get('/admin', [HomeController::class, 'index'])->name('home.index');
     Route::get('/login', [HomeController::class, 'index'])->name('home.index');
