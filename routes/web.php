@@ -17,6 +17,7 @@ use App\Http\Controllers\System\MenuController;
 use App\Http\Controllers\System\ResourceMonitorController;
 use App\Http\Controllers\System\RedirectionController;
 use App\Http\Controllers\System\ActivityController;
+use App\Http\Controllers\System\PartnerController;
 
 
 //Route::get('/', function () {
@@ -59,5 +60,6 @@ Route::prefix(getSystemPrefix())->middleware(['auth', 'permission.routes'])->gro
     Route::get('monitor', [ResourceMonitorController::class, 'index'])->name('monitor.index');
     Route::resource('/redirections', RedirectionController::class);
     Route::resource('/activities', ActivityController::class);
+    Route::resource('/partners', PartnerController::class);
 
 });
