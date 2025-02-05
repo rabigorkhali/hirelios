@@ -21,6 +21,7 @@ $menuBaseUrl = '/menus';
 $monitorUrl = '/monitor';
 $redirectionUrl = '/redirections';
 $activityUrl = '/activities';
+$partnerUrl = '/partners';
 
 return [
     // routes entered in this array are accessible by any user no matter what role is given
@@ -319,6 +320,58 @@ return [
             ],
 
         ],
+        [
+            'name' => 'Partner',
+            'icon' => "<i class='fa fa-user-graduate'></i>",
+            'hasSubmodules' => false,
+            'route' => $partnerUrl,
+            'routeIndexName' => 'partners.index',
+            'routeName' => 'partners',
+            'permissions' => [
+                [
+                    'name' => 'View Partner',
+                    'route' => [
+                        'url' => $partnerUrl,
+                        'method' => $getMethod,
+                    ],
+                ],
+                [
+                    'name' => 'Create Partner',
+                    'route' => [
+                        [
+                            'url' => $partnerUrl . '/create',
+                            'method' => $getMethod,
+                        ],
+                        [
+                            'url' => $partnerUrl,
+                            'method' => $postMethod,
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Edit Partner',
+                    'route' => [
+                        [
+                            'url' => $partnerUrl . '/*/edit',
+                            'method' => $getMethod,
+                        ],
+                        [
+                            'url' => $testimonialUrl . '/*',
+                            'method' => $putMethod,
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Delete Testimonial',
+                    'route' => [
+                        'url' => $testimonialUrl . '/*',
+                        'method' => $deleteMethod,
+                    ],
+                ]
+            ],
+
+        ],
+
         [
             'name' => 'Team',
             'icon' => "<i class='fa fa-users'></i>",
