@@ -13,9 +13,12 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware) {
         $middleware->alias([
             'permission.routes' => \App\Http\Middleware\PermissionRoutes::class,
+            'auth' => \Illuminate\Auth\Middleware\Authenticate::class,
+            'log' => \App\Http\Middleware\LogRouteAccess::class,
+
         ]);
+
         $middleware->append(\App\Http\Middleware\RedirectionMiddleware::class);
-        $middleware->prepend(\App\Http\Middleware\LogRouteAccess::class);
 
     })
     ->withExceptions(function (Exceptions $exceptions) {

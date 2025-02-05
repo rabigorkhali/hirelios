@@ -13,7 +13,7 @@ class LogRouteAccess
 {
     public function handle(Request $request, Closure $next)
     {
-//        if (Auth::check()) {
+        if (Auth::check()) {
             $response=activity()
                 ->causedBy(Auth::user())
                 ->withProperties([
@@ -23,7 +23,7 @@ class LogRouteAccess
                     'route' => $request->path(),
                 ])
                 ->log('User accessed ' . $request->path());
-//        }
+        }
 
         return $next($request);
     }
