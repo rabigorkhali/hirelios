@@ -60,9 +60,5 @@ Route::prefix(getSystemPrefix())->middleware(['auth', 'permission.routes'])->gro
     Route::get('monitor', [ResourceMonitorController::class, 'index'])->name('monitor.index');
     Route::resource('/redirections', RedirectionController::class);
     Route::resource('/activities', ActivityController::class);
-<<<<<<< HEAD
-=======
     Route::resource('/partners', PartnerController::class);
->>>>>>> upstream/main
-
 });
