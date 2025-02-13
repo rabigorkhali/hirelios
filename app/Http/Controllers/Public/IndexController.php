@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Public;
 
 use App\Http\Controllers\Controller;
 use App\Models\Page;
+use App\Models\Partner;
+use App\Models\Testimonial;
 
 
 class IndexController extends Controller
@@ -27,8 +29,12 @@ class IndexController extends Controller
     {
         try {
             $data = [];
+            $data['page']=Page::where('slug','index')->where('status',1)->first();
+            $data['partners']=Partner::where('status',1)->orderby('position')->get();
+            $data['testimonials']=Testimonial::where('status',1)->orderby('position')->get();
             return view('frontend.index', $data);
         } catch (\Throwable $th) {
+            abort(404);
         }
     }
 

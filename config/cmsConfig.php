@@ -269,57 +269,57 @@ return [
                 ],
             ],
         ],
-//        [
-//            'name' => 'Testimonial',
-//            'icon' => "<i class='fa fa-user-friends'></i>",
-//            'hasSubmodules' => false,
-//            'route' => $testimonialUrl,
-//            'routeIndexName' => 'testimonials.index',
-//            'routeName' => 'testimonials',
-//            'permissions' => [
-//                [
-//                    'name' => 'View Testimonial',
-//                    'route' => [
-//                        'url' => $testimonialUrl,
-//                        'method' => $getMethod,
-//                    ],
-//                ],
-//                [
-//                    'name' => 'Create Testimonial',
-//                    'route' => [
-//                        [
-//                            'url' => $testimonialUrl . '/create',
-//                            'method' => $getMethod,
-//                        ],
-//                        [
-//                            'url' => $testimonialUrl,
-//                            'method' => $postMethod,
-//                        ],
-//                    ],
-//                ],
-//                [
-//                    'name' => 'Edit Testimonial',
-//                    'route' => [
-//                        [
-//                            'url' => $testimonialUrl . '/*/edit',
-//                            'method' => $getMethod,
-//                        ],
-//                        [
-//                            'url' => $testimonialUrl . '/*',
-//                            'method' => $putMethod,
-//                        ],
-//                    ],
-//                ],
-//                [
-//                    'name' => 'Delete Testimonial',
-//                    'route' => [
-//                        'url' => $testimonialUrl . '/*',
-//                        'method' => $deleteMethod,
-//                    ],
-//                ]
-//            ],
-//
-//        ],
+        [
+            'name' => 'Testimonial',
+            'icon' => "<i class='fa fa-user-friends'></i>",
+            'hasSubmodules' => false,
+            'route' => $testimonialUrl,
+            'routeIndexName' => 'testimonials.index',
+            'routeName' => 'testimonials',
+            'permissions' => [
+                [
+                    'name' => 'View Testimonial',
+                    'route' => [
+                        'url' => $testimonialUrl,
+                        'method' => $getMethod,
+                    ],
+                ],
+                [
+                    'name' => 'Create Testimonial',
+                    'route' => [
+                        [
+                            'url' => $testimonialUrl . '/create',
+                            'method' => $getMethod,
+                        ],
+                        [
+                            'url' => $testimonialUrl,
+                            'method' => $postMethod,
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Edit Testimonial',
+                    'route' => [
+                        [
+                            'url' => $testimonialUrl . '/*/edit',
+                            'method' => $getMethod,
+                        ],
+                        [
+                            'url' => $testimonialUrl . '/*',
+                            'method' => $putMethod,
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Delete Testimonial',
+                    'route' => [
+                        'url' => $testimonialUrl . '/*',
+                        'method' => $deleteMethod,
+                    ],
+                ]
+            ],
+
+        ],
         [
             'name' => 'Partner',
             'icon' => "<i class='fa fa-user-graduate'></i>",

@@ -1,0 +1,338 @@
+@font-face {
+    font-family: 'Acumin Pro';
+    src: url('../webfonts/AcuminPro-Bold.eot');
+    src: url('../webfonts/AcuminPro-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../webfonts/AcuminPro-Bold.woff2') format('woff2'),
+        url('../webfonts/AcuminPro-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Acumin Pro';
+    src: url('../webfonts/AcuminPro-Regular.eot');
+    src: url('../webfonts/AcuminPro-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../webfonts/AcuminPro-Regular.woff2') format('woff2'),
+        url('../webfonts/AcuminPro-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Acumin Pro Condensed';
+    src: url('../webfonts/AcuminProCond-Black.eot');
+    src: url('../webfonts/AcuminProCond-Black.eot?#iefix') format('embedded-opentype'),
+        url('../webfonts/AcuminProCond-Black.woff2') format('woff2'),
+        url('../webfonts/AcuminProCond-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Acumin Pro';
+    src: url('../webfonts/AcuminPro-Black.eot');
+    src: url('../webfonts/AcuminPro-Black.eot?#iefix') format('embedded-opentype'),
+        url('../webfonts/AcuminPro-Black.woff2') format('woff2'),
+        url('../webfonts/AcuminPro-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Acumin Pro Condensed';
+    src: url('../webfonts/AcuminProCond-Bold.eot');
+    src: url('../webfonts/AcuminProCond-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../webfonts/AcuminProCond-Bold.woff2') format('woff2'),
+        url('../webfonts/AcuminProCond-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Acumin Pro Condensed';
+    src: url('../webfonts/AcuminProCond-Regular.eot');
+    src: url('../webfonts/AcuminProCond-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../webfonts/AcuminProCond-Regular.woff2') format('woff2'),
+        url('../webfonts/AcuminProCond-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Acumin Pro Condensed';
+    src: url('../webfonts/AcuminProCond-ExtraLight.eot');
+    src: url('../webfonts/AcuminProCond-ExtraLight.eot?#iefix') format('embedded-opentype'),
+        url('../webfonts/AcuminProCond-ExtraLight.woff2') format('woff2'),
+        url('../webfonts/AcuminProCond-ExtraLight.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Acumin Pro Condensed';
+    src: url('../webfonts/AcuminProCond-Thin.eot');
+    src: url('../webfonts/AcuminProCond-Thin.eot?#iefix') format('embedded-opentype'),
+        url('../webfonts/AcuminProCond-Thin.woff2') format('woff2'),
+        url('../webfonts/AcuminProCond-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Acumin Pro Condensed';
+    src: url('../webfonts/AcuminProCond-Medium.eot');
+    src: url('../webfonts/AcuminProCond-Medium.eot?#iefix') format('embedded-opentype'),
+        url('../webfonts/AcuminProCond-Medium.woff2') format('woff2'),
+        url('../webfonts/AcuminProCond-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Acumin Pro Condensed';
+    src: url('../webfonts/AcuminProCond-Semibold.eot');
+    src: url('../webfonts/AcuminProCond-Semibold.eot?#iefix') format('embedded-opentype'),
+        url('../webfonts/AcuminProCond-Semibold.woff2') format('woff2'),
+        url('../webfonts/AcuminProCond-Semibold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Acumin Pro Condensed';
+    src: url('../webfonts/AcuminProCond-Light.eot');
+    src: url('../webfonts/AcuminProCond-Light.eot?#iefix') format('embedded-opentype'),
+        url('../webfonts/AcuminProCond-Light.woff2') format('woff2'),
+        url('../webfonts/AcuminProCond-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Acumin Pro ExtraCondensed';
+    src: url('../webfonts/AcuminProExtraCond-Black.eot');
+    src: url('../webfonts/AcuminProExtraCond-Black.eot?#iefix') format('embedded-opentype'),
+        url('../webfonts/AcuminProExtraCond-Black.woff2') format('woff2'),
+        url('../webfonts/AcuminProExtraCond-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Acumin Pro Condensed';
+    src: url('../webfonts/AcuminProCond-UltraBlack.eot');
+    src: url('../webfonts/AcuminProCond-UltraBlack.eot?#iefix') format('embedded-opentype'),
+        url('../webfonts/AcuminProCond-UltraBlack.woff2') format('woff2'),
+        url('../webfonts/AcuminProCond-UltraBlack.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Acumin Pro ExtraCondensed';
+    src: url('../webfonts/AcuminProExtraCond-Bold.eot');
+    src: url('../webfonts/AcuminProExtraCond-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../webfonts/AcuminProExtraCond-Bold.woff2') format('woff2'),
+        url('../webfonts/AcuminProExtraCond-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Acumin Pro ExtraCondensed';
+    src: url('../webfonts/AcuminProExtraCond-ExtraLight.eot');
+    src: url('../webfonts/AcuminProExtraCond-ExtraLight.eot?#iefix') format('embedded-opentype'),
+        url('../webfonts/AcuminProExtraCond-ExtraLight.woff2') format('woff2'),
+        url('../webfonts/AcuminProExtraCond-ExtraLight.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Acumin Pro ExtraCondensed';
+    src: url('../webfonts/AcuminProExtraCond-Regular.eot');
+    src: url('../webfonts/AcuminProExtraCond-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../webfonts/AcuminProExtraCond-Regular.woff2') format('woff2'),
+        url('../webfonts/AcuminProExtraCond-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Acumin Pro ExtraCondensed';
+    src: url('../webfonts/AcuminProExtraCond-Light.eot');
+    src: url('../webfonts/AcuminProExtraCond-Light.eot?#iefix') format('embedded-opentype'),
+        url('../webfonts/AcuminProExtraCond-Light.woff2') format('woff2'),
+        url('../webfonts/AcuminProExtraCond-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Acumin Pro ExtraCondensed';
+    src: url('../webfonts/AcuminProExtraCond-Medium.eot');
+    src: url('../webfonts/AcuminProExtraCond-Medium.eot?#iefix') format('embedded-opentype'),
+        url('../webfonts/AcuminProExtraCond-Medium.woff2') format('woff2'),
+        url('../webfonts/AcuminProExtraCond-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Acumin Pro ExtraCondensed';
+    src: url('../webfonts/AcuminProExtraCond-Semibold.eot');
+    src: url('../webfonts/AcuminProExtraCond-Semibold.eot?#iefix') format('embedded-opentype'),
+        url('../webfonts/AcuminProExtraCond-Semibold.woff2') format('woff2'),
+        url('../webfonts/AcuminProExtraCond-Semibold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Acumin Pro ExtraCondensed';
+    src: url('../webfonts/AcuminProExtraCond-Thin.eot');
+    src: url('../webfonts/AcuminProExtraCond-Thin.eot?#iefix') format('embedded-opentype'),
+        url('../webfonts/AcuminProExtraCond-Thin.woff2') format('woff2'),
+        url('../webfonts/AcuminProExtraCond-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Acumin Pro ExtraCondensed';
+    src: url('../webfonts/AcuminProExtraCond-UltraBlack.eot');
+    src: url('../webfonts/AcuminProExtraCond-UltraBlack.eot?#iefix') format('embedded-opentype'),
+        url('../webfonts/AcuminProExtraCond-UltraBlack.woff2') format('woff2'),
+        url('../webfonts/AcuminProExtraCond-UltraBlack.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Acumin Pro';
+    src: url('../webfonts/AcuminPro-ExtraLight.eot');
+    src: url('../webfonts/AcuminPro-ExtraLight.eot?#iefix') format('embedded-opentype'),
+        url('../webfonts/AcuminPro-ExtraLight.woff2') format('woff2'),
+        url('../webfonts/AcuminPro-ExtraLight.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Acumin Pro';
+    src: url('../webfonts/AcuminPro-Light.eot');
+    src: url('../webfonts/AcuminPro-Light.eot?#iefix') format('embedded-opentype'),
+        url('../webfonts/AcuminPro-Light.woff2') format('woff2'),
+        url('../webfonts/AcuminPro-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Acumin Pro';
+    src: url('../webfonts/AcuminPro-Medium.eot');
+    src: url('../webfonts/AcuminPro-Medium.eot?#iefix') format('embedded-opentype'),
+        url('../webfonts/AcuminPro-Medium.woff2') format('woff2'),
+        url('../webfonts/AcuminPro-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Acumin Pro';
+    src: url('../webfonts/AcuminPro-Semibold.eot');
+    src: url('../webfonts/AcuminPro-Semibold.eot?#iefix') format('embedded-opentype'),
+        url('../webfonts/AcuminPro-Semibold.woff2') format('woff2'),
+        url('../webfonts/AcuminPro-Semibold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Acumin Pro SemiCondensed';
+    src: url('../webfonts/AcuminProSemiCond-Black.eot');
+    src: url('../webfonts/AcuminProSemiCond-Black.eot?#iefix') format('embedded-opentype'),
+        url('../webfonts/AcuminProSemiCond-Black.woff2') format('woff2'),
+        url('../webfonts/AcuminProSemiCond-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Acumin Pro SemiCondensed';
+    src: url('../webfonts/AcuminProSemiCond-Bold.eot');
+    src: url('../webfonts/AcuminProSemiCond-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../webfonts/AcuminProSemiCond-Bold.woff2') format('woff2'),
+        url('../webfonts/AcuminProSemiCond-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Acumin Pro SemiCondensed';
+    src: url('../webfonts/AcuminProSemiCond-Regular.eot');
+    src: url('../webfonts/AcuminProSemiCond-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../webfonts/AcuminProSemiCond-Regular.woff2') format('woff2'),
+        url('../webfonts/AcuminProSemiCond-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Acumin Pro SemiCondensed';
+    src: url('../webfonts/AcuminProSemiCond-ExtraLight.eot');
+    src: url('../webfonts/AcuminProSemiCond-ExtraLight.eot?#iefix') format('embedded-opentype'),
+        url('../webfonts/AcuminProSemiCond-ExtraLight.woff2') format('woff2'),
+        url('../webfonts/AcuminProSemiCond-ExtraLight.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Acumin Pro SemiCondensed';
+    src: url('../webfonts/AcuminProSemiCond-Light.eot');
+    src: url('../webfonts/AcuminProSemiCond-Light.eot?#iefix') format('embedded-opentype'),
+        url('../webfonts/AcuminProSemiCond-Light.woff2') format('woff2'),
+        url('../webfonts/AcuminProSemiCond-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'humanesemi_bold';
+    src: url('../webfonts/humane-semibold-webfont.woff2') format('woff2'),
+         url('../webfonts/humane-semibold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}

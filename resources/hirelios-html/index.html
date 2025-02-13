@@ -40,7 +40,7 @@
 <div class="offcanvas offcanvas-end offcanvas-menu" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
 	<div class="text-start p-3">
 		<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-	</div>  
+	</div>
 
   <div class="offcanvas-body">
 	<div class="p-3">
@@ -107,7 +107,7 @@
 						<li><a href="#">Teaching and Learning Resources</a></li>
 					</ul>
 				</div>
-				
+
 			</div>
 		</div>
 	</div>
@@ -177,7 +177,7 @@
 		</div>
 	  <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
 	</div>
-	<div class="offcanvas-body">	  
+	<div class="offcanvas-body">
 		<ul>
 			<li><a href="#">Home</a></li>
 			<li><a href="#">About</a>
@@ -185,7 +185,7 @@
 					<li><a href="#">About Us</a></li>
 					<li><a href="#">Staff</a></li>
 					<li><a href="#">Message from Principal</a></li>
-				</ul>		
+				</ul>
 			</li>
 			<li><a href="#">Courses</a></li>
 			<li><a href="#">Admissions</a></li>
@@ -246,13 +246,13 @@
 </header>
 
 <header class="hide-mb rd-display">
-	<div class="container">		
+	<div class="container">
 		<div class="row d-flex align-items-stretch justify-content-center">
 			<div class="col-md-2">
 				<div class="logo">
 					<a href="/"><img src="img/hirelios.svg" class="img-fluid" alt=""></a>
 				</div>
-			</div>		
+			</div>
 			<nav class="col-md-10">
 				<ul>
 					<li><a href="#">About</a></li>
@@ -261,7 +261,7 @@
 					<li><a href="#">Contact</a></li>
 				</ul>
 			</nav>
-		</div>					
+		</div>
 	</div>
 </header>
 
@@ -292,7 +292,7 @@
                     items:1
                 }
             }
-		})	
+		})
 	</script>
 </div>
 
@@ -332,7 +332,7 @@
 								items:5
 							}
 						}
-					})	
+					})
 				</script>
 			</div>
 		</div>
@@ -379,7 +379,7 @@
 					</div>
 					<h3>Over 1336+ Successful Connections Across the Globe.</h3>
 					<p>We connect the right talent with the perfect job opportunities tailored to your skills and goals.</p>
-				</div>				
+				</div>
 			</div>
 			<div class="col">
 				<div class="w-75">
@@ -496,7 +496,7 @@
 								items:1
 							}
 						}
-					})	
+					})
 				</script>
 			</div>
 		</div>
@@ -546,7 +546,7 @@
 					</div>
 					<div class="col-md-4">
 						<span class="title">Contact Us</span>
-						<address>							
+						<address>
 							<div class="d-flex align-items-center mb-4">
 								<i class="fas fa-phone me-2 fa-2x"></i>
 								<p>
@@ -564,7 +564,7 @@
 						</address>
 					</div>
 				</div>
-			</div>			
+			</div>
 		</div>
 		<div class="fbtm py-3">
 			<div class="row d-flex align-items-center">
@@ -592,8 +592,8 @@
 			<div class="modal-body bg-dark p-5 text-white">
 				<div class="position-absolute top-0 start-100 translate-middle rd-close-btn">
 					<button type="button" class="btn btn-sm" data-bs-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></button>
-				</div>		
-				<p class="fs-3 py-3">Search</p>		
+				</div>
+				<p class="fs-3 py-3">Search</p>
 				<div class="input-group search" itemscope itemtype="https://schema.org/WebSite">
 					<meta itemprop="url" content="https://www.thebritishcollege.edu.np/"/>
 					<form class="d-flex w-100" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction">
@@ -607,7 +607,7 @@
 	</div>
 </div>
 <script src="js/techie.js"></script>
-<!-- 
+<!--
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r83/three.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenMax.min.js"></script> -->
@@ -628,17 +628,17 @@
 			});
 		});
 
-	});  
+	});
 </script>
 
 
 <script>
 	// Get the video
 	var video = document.getElementById("myVideo");
-	
+
 	// Get the button
 	var btn = document.getElementById("myBtn");
-	
+
 	// Pause and play the video, and change the button text
 	function videoFunction() {
 	  if (video.paused) {
@@ -663,7 +663,7 @@ let vertex = `
   `;
 
 let fragment = `
-	  
+
 	  varying vec2 vUv;
 
 	  uniform sampler2D currentImage;
@@ -680,7 +680,7 @@ let fragment = `
 
 		  vec4 orig1 = texture2D(currentImage, uv);
 		  vec4 orig2 = texture2D(nextImage, uv);
-		  
+
 		  _currentImage = texture2D(currentImage, vec2(uv.x, uv.y + dispFactor * (orig2 * intensity)));
 
 		  _nextImage = texture2D(nextImage, vec2(uv.x, uv.y + (1.0 - dispFactor) * (orig1 * intensity)));
