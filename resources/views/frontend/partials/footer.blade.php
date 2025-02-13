@@ -107,7 +107,6 @@
         </div>
     </div>
 </div>
-<script src="js/techie.js"></script>
 <!--
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r83/three.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.js"></script>
