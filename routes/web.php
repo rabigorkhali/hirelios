@@ -18,7 +18,7 @@ use App\Http\Controllers\System\ResourceMonitorController;
 use App\Http\Controllers\System\RedirectionController;
 use App\Http\Controllers\System\ActivityController;
 use App\Http\Controllers\System\PartnerController;
-
+use App\Http\Controllers\System\FileManagerController;
 
 //Route::get('/', function () {
 //    return view('index');
@@ -52,7 +52,7 @@ Route::prefix(getSystemPrefix())->middleware(['auth', 'permission.routes','log']
     Route::resource('/posts', PostController::class, ['except' => ['show']]);
     Route::resource('/testimonials', TestimonialController::class);
     Route::resource('/teams',controller:  TeamController::class);
-    Route::get('/file-manager', [\App\Http\Controllers\System\FileManagerController::class, 'index'])->name('file-manager.index');
+    Route::get('/file-manager', [FileManagerController::class, 'index'])->name('file-manager.index');
     Route::resource('/contact-us', ContactUsController::class);
     Route::resource('/events', EventController::class, ['except' => ['show']]);
     Route::get('/events/delete-gallery/{id}', [EventController::class,'deleteGallery'])->name('deleteGallery');
@@ -61,5 +61,7 @@ Route::prefix(getSystemPrefix())->middleware(['auth', 'permission.routes','log']
     Route::resource('/redirections', RedirectionController::class);
     Route::resource('/activities', ActivityController::class);
     Route::resource('/partners', PartnerController::class);
+    Route::post('/ckeditor-upload', [FileManagerController::class, 'ckeditorUpload'])->name('ckeditor.upload')->withoutMiddleware([\Illuminate\Foundation\Http\Middleware\VerifyCsrfToken::class]);
+
 
 });

@@ -26,7 +26,17 @@
     $(document).ready(function () {
         // Initialize CKEditor for all textareas with the class 'editor'
         document.querySelectorAll('.text-editor').forEach((textarea) => {
-            CKEDITOR.replace(textarea);
+            CKEDITOR.replace(textarea.id, {
+                allowedContent: true,
+                filebrowserUploadUrl: "{{ route('ckeditor.upload') }}?_token={{ csrf_token() }}",
+                filebrowserUploadMethod: 'form',
+                imageUploadUrl: "{{ route('ckeditor.upload') }}?_token={{ csrf_token() }}", // Enable direct image pasting
+                on: {
+                    fileUploadResponse: function(evt) {
+                        console.log('Upload Response:', evt.data.fileLoader.xhr.responseText);
+                    }
+                }
+            });
         });
         setTimeout(function () {
             $('.cke_notifications_area').hide();
