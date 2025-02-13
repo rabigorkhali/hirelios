@@ -19,11 +19,11 @@ use App\Http\Controllers\System\RedirectionController;
 use App\Http\Controllers\System\ActivityController;
 use App\Http\Controllers\System\PartnerController;
 use App\Http\Controllers\System\FileManagerController;
+use App\Http\Controllers\Public\IndexController;
 
 //Route::get('/', function () {
 //    return view('index');
 //});
-Route::get('/', [\App\Http\Controllers\Public\IndexController::class, 'index'])->name('index');
 
 
 Auth::routes();
@@ -34,7 +34,13 @@ Route::get('password/reset', [App\Http\Controllers\Auth\ForgotPasswordController
 Route::post('password/email', [App\Http\Controllers\Auth\ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
 Route::get('password/reset/{token}', [App\Http\Controllers\Auth\ResetPasswordController::class, 'showResetForm'])->name('password.reset');
 Route::post('password/reset', [App\Http\Controllers\Auth\ResetPasswordController::class, 'reset'])->name('password.update');
-
+/*FRONTEND ROUTE*/
+$pages = \App\Models\Page::where('status', 1)->get();
+foreach ($pages as $page) {
+    Route::get('/'.$page->slug, [IndexController::class, 'pageDirectUrl'])->name('page'.$page->slug);
+}
+Route::get('/', [IndexController::class, 'index'])->name('index');
+/*FRONTEND ROUTE*/
 Route::prefix(getSystemPrefix())->middleware(['auth', 'permission.routes','log'])->group(function () {
     Route::get('/home', [HomeController::class, 'index'])->name('home.index');
     Route::get('/admin', [HomeController::class, 'index'])->name('home.index');
