@@ -302,3 +302,30 @@
         $('html, body').animate({scrollTop: 0}, '300');
     });
 </script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+@if(session('success'))
+    <script>
+        Swal.fire({
+            icon: 'success',
+            title: 'Success',
+            text: '{{ session('success') }}',
+            confirmButtonText: 'OK',
+            confirmButtonColor: '#3085d6',
+        });
+    </script>
+@endif
+
+@if(session('error'))
+    <script>
+        Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: '{{ session('error') }}',
+            confirmButtonText: 'OK',
+            confirmButtonColor: '#d33',
+        });
+    </script>
+@endif

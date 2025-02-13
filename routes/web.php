@@ -40,6 +40,8 @@ foreach ($pages as $page) {
     Route::get('/' . $page->slug, [IndexController::class, 'pageDirectUrl'])->name('page' . $page->slug);
 }
 Route::get('/', [IndexController::class, 'index'])->name('index');
+Route::get('/contact', [IndexController::class, 'contact'])->name('contact');
+Route::post('/contact', [IndexController::class, 'contactSave'])->name('contactSave');
 /*FRONTEND ROUTE*/
 Route::prefix(getSystemPrefix())->middleware(['auth', 'permission.routes', 'log'])->group(function () {
     Route::get('/home', [HomeController::class, 'index'])->name('home.index');

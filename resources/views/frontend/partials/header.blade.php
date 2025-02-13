@@ -27,6 +27,7 @@
     <script src="{{asset('frontend/js/owl.carousel.min.js')}}"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js')}}"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    @yield('header')
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

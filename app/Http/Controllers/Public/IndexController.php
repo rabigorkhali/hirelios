@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Public;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\System\ContactUsRequest;
+use App\Models\ContactUs;
 use App\Models\Page;
 use App\Models\Partner;
 use App\Models\Testimonial;
@@ -29,9 +31,9 @@ class IndexController extends Controller
     {
         try {
             $data = [];
-            $data['page']=Page::where('slug','index')->where('status',1)->first();
-            $data['partners']=Partner::where('status',1)->orderby('position')->get();
-            $data['testimonials']=Testimonial::where('status',1)->orderby('position')->get();
+            $data['page'] = Page::where('slug', 'index')->where('status', 1)->first();
+            $data['partners'] = Partner::where('status', 1)->orderby('position')->get();
+            $data['testimonials'] = Testimonial::where('status', 1)->orderby('position')->get();
             return view('frontend.index', $data);
         } catch (\Throwable $th) {
             abort(404);
@@ -51,5 +53,28 @@ class IndexController extends Controller
         } catch (\Throwable $th) {
             return view('frontend.pages.404-not-found');
         }
+    }
+
+    public function contact()
+    {
+        try {
+            $data = [];
+            $data['page'] = Page::where('slug', 'contact')->where('status', 1)->first();
+            return view('frontend.contact', $data);
+        } catch (\Throwable $th) {
+            abort(404);
+        }
+    }
+
+    public function contactSave(ContactUsRequest $request)
+    {
+        try {
+            $inputData = $request->except('_token');
+            ContactUs::create($inputData);
+            return redirect()->back()->with('success', 'Your message has been sent successfully!');
+        } catch (\Throwable $th) {
+            return redirect()->back()->with('error', 'An error occurred while sending your message. Please try again later.');
+        }
+
     }
 }
