@@ -18,7 +18,7 @@ use App\Http\Controllers\System\ResourceMonitorController;
 use App\Http\Controllers\System\RedirectionController;
 use App\Http\Controllers\System\ActivityController;
 use App\Http\Controllers\System\PartnerController;
-
+use App\Http\Controllers\System\FileManagerController;
 
 //Route::get('/', function () {
 //    return view('index');
@@ -35,30 +35,31 @@ Route::post('password/email', [App\Http\Controllers\Auth\ForgotPasswordControlle
 Route::get('password/reset/{token}', [App\Http\Controllers\Auth\ResetPasswordController::class, 'showResetForm'])->name('password.reset');
 Route::post('password/reset', [App\Http\Controllers\Auth\ResetPasswordController::class, 'reset'])->name('password.update');
 
-Route::prefix(getSystemPrefix())->middleware(['auth', 'permission.routes','log'])->group(function () {
+Route::prefix(getSystemPrefix())->middleware(['auth', 'permission.routes', 'log'])->group(function () {
     Route::get('/home', [HomeController::class, 'index'])->name('home.index');
     Route::get('/admin', [HomeController::class, 'index'])->name('home.index');
     Route::get('/login', [HomeController::class, 'index'])->name('home.index');
     Route::get('/admin', [HomeController::class, 'index'])->name('home.index');
     Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
     Route::resource('/profile', ProfileController::class)->except(['show']);
-    Route::get('/change-password', [ProfileController::class,'changePassword'])->name('change.password');
-    Route::put('/change-password', [ProfileController::class,'changePasswordUpdate'])->name('change.password.update');
-    Route::resource('/configs', ConfigController::class)->except(['show']);//configs.index, configs.create, configs.store, configs.show, configs.edit, configs.update, configs.destroy
+    Route::get('/change-password', [ProfileController::class, 'changePassword'])->name('change.password');
+    Route::put('/change-password', [ProfileController::class, 'changePasswordUpdate'])->name('change.password.update');
+    Route::resource('/configs', ConfigController::class)->except(['show']); //configs.index, configs.create, configs.store, configs.show, configs.edit, configs.update, configs.destroy
     Route::resource('/users', UserController::class, ['except' => ['show']]);
     Route::resource('/roles', RoleController::class, ['except' => ['show']]);
     Route::resource('/pages', PageController::class, ['except' => ['show']]);
     Route::resource('/post-categories', PostCategoryController::class, ['except' => ['show']]);
     Route::resource('/posts', PostController::class, ['except' => ['show']]);
     Route::resource('/testimonials', TestimonialController::class);
-    Route::resource('/teams',controller:  TeamController::class);
-    Route::get('/file-manager', [\App\Http\Controllers\System\FileManagerController::class, 'index'])->name('file-manager.index');
+    Route::resource('/teams', controller: TeamController::class);
+    Route::get('/file-manager', [FileManagerController::class, 'index'])->name('file-manager.index');
     Route::resource('/contact-us', ContactUsController::class);
     Route::resource('/events', EventController::class, ['except' => ['show']]);
-    Route::get('/events/delete-gallery/{id}', [EventController::class,'deleteGallery'])->name('deleteGallery');
+    Route::get('/events/delete-gallery/{id}', [EventController::class, 'deleteGallery'])->name('deleteGallery');
     Route::resource('/menus', MenuController::class, ['except' => ['show']]);
     Route::get('monitor', [ResourceMonitorController::class, 'index'])->name('monitor.index');
     Route::resource('/redirections', RedirectionController::class);
     Route::resource('/activities', ActivityController::class);
     Route::resource('/partners', PartnerController::class);
+    Route::post('/ckeditor-upload', [FileManagerController::class, 'ckeditorUpload'])->name('ckeditor.upload')->withoutMiddleware([\Illuminate\Foundation\Http\Middleware\VerifyCsrfToken::class]);
 });

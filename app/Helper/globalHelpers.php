@@ -207,11 +207,24 @@ function uploadImage($dir, $inputName, $resize = false, $width = null, $height =
 
     // Get uploaded file details
     $file = $_FILES[$inputName];
+    $originalName = pathinfo($file['name'], PATHINFO_FILENAME);
     $extension = pathinfo($file['name'], PATHINFO_EXTENSION);
-    $uniqueName = uniqid();
-    $fileName = $uniqueName . '.' . $extension;
-    $fileThumbnail = $uniqueName . '-medium.' . $extension;
-    $fileSmall = $uniqueName . '-small.' . $extension;
+
+    // Sanitize filename
+    $originalName = preg_replace('/[^A-Za-z0-9\-_]/', '-', $originalName) . '-' . substr(str_replace('.', '', microtime(true)), -3);
+
+    // Check if filename already exists and increment it if necessary
+    $fileName = $originalName . '.' . $extension;
+    $counter = 1;
+
+    while (file_exists($directory . '/' . $fileName)) {
+        $fileName = $originalName . '-' . $counter . '.' . $extension;
+        $counter++;
+    }
+
+    // Define thumbnail names
+    $fileThumbnail = pathinfo($fileName, PATHINFO_FILENAME) . '-medium.' . $extension;
+    $fileSmall = pathinfo($fileName, PATHINFO_FILENAME) . '-small.' . $extension;
 
     // Move uploaded file to the target directory
     $originalPath = $directory . '/' . $fileName;
@@ -299,14 +312,15 @@ function saveImageFromType($image, $filePath, $imageType)
             throw new Exception('Unsupported image type');
     }
 }
+
 function removeImage($dir)
 {
-    $f1 =  $dir ;
+    $f1 = $dir;
     $f2 = str_replace('.', '-medium.', $f1);
     $f3 = str_replace('.', '-small.', $f1);
-    File::delete(public_path() .'/'.$f1);
-    File::delete(public_path() .'/'.$f2);
-    File::delete(public_path() .'/'.$f3);
+    File::delete(public_path() . '/' . $f1);
+    File::delete(public_path() . '/' . $f2);
+    File::delete(public_path() . '/' . $f3);
 }
 
 if (!function_exists('getRedirectionType')) {

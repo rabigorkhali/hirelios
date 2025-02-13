@@ -1,0 +1,363 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="cube-desc" content="" />
+<meta name="keywords" content="" />
+<link href="img/favicon.png" rel="icon">
+<title>News Detail - Hirelios</title>
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css"> -->
+<link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/font-awesome-line-awesome/css/all.min.css">
+<link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+<link href="css/owl.carousel.min.css" rel="stylesheet">
+<link href="css/owl.theme.default.min.css" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<link href="css/hirelios.min.css" rel="stylesheet">
+<!-- jQuery library -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+    <!<[endif]-->
+</head>
+<body>
+
+<!-- <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Offcanvas - right <i class="las la-battery-three-quarters"></i></button> -->
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasRightLabel">Right Offcanvas</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    ...
+  </div>
+</div> <!-- /Right Offcanvas-->
+
+<!-- <div id="draggable" class="rd-cube-ads">
+	<div class="close">
+		<a onclick="myFunction()"><i class="fas fa-times-circle"></i></a>
+	</div>
+	<div class="cube-container">
+		<div class="cube cube1">
+			<div class="box box1 front">
+				<img src="img/ads/1.gif" class="img-fluid" alt="">
+			</div>
+			<div class="box box1 right">
+				<img src="img/ads/1.gif" class="img-fluid" alt="">
+			</div>
+			<div class="box box1 left">
+				<img src="img/ads/1.gif" class="img-fluid" alt="">
+			</div>
+			<div class="box box1 back">
+				<img src="img/ads/1.gif" class="img-fluid" alt="">
+			</div>
+		</div>
+	</div>
+</div> -->
+
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasWithBackdrop" aria-labelledby="offcanvasWithBackdropLabel">
+	<div class="offcanvas-header">
+		<div class="logo">
+			<a href="/"><img src="img/hirelios.svg" class="img-fluid" alt=""></a>
+		</div>
+	  <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+	</div>
+	<div class="offcanvas-body">	  
+		<ul>
+			<li><a href="#">Home</a></li>
+			<li><a href="#">About</a>
+				<ul>
+					<li><a href="#">About Us</a></li>
+					<li><a href="#">Staff</a></li>
+					<li><a href="#">Message from Principal</a></li>
+				</ul>		
+			</li>
+			<li><a href="#">Courses</a></li>
+			<li><a href="#">Admissions</a></li>
+			<li><a href="#">Students</a></li>
+			<li><a href="#">Scholarships</a></li>
+			<li><a href="#">Apply</a></li>
+			<li><a href="#">International</a></li>
+		</ul>
+	</div>
+	<div class="offcanvas-footer">
+		<ul class="social">
+			<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+			<li><a href="#"><i class="fab fa-facebook-messenger"></i></a></li>
+			<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+			<li><a href="#"><i class="fab fa-youtube"></i></a></li>
+		</ul>
+	</div>
+</div> <!-- /nav mobile -->
+
+<header class="show-mb">
+	<div class="container">
+		<div class="row d-flex align-items-center">
+			<div class="col-4 logo">
+				<a href="/"><img src="img/hirelios.svg" class="img-fluid" alt=""></a>
+			</div>
+			<div class="col-8">
+				<ul class="justify-content-end">
+					<li>
+						<div class="form-check form-switch">
+							<input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+						</div>
+					</li>
+					<li><a href="#"><i class="las la-search"></i></a></li>
+					<li><a href="#"><i class="las la-bars"></i></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</header>
+
+<header class="hide-mb rd-display">
+	<div class="container">		
+		<div class="row d-flex align-items-stretch justify-content-center">
+			<div class="col-md-2">
+				<div class="logo">
+					<a href="/"><img src="img/hirelios.svg" class="img-fluid" alt=""></a>
+				</div>
+			</div>		
+			<nav class="col-md-10">
+				<ul>
+					<li><a href="#">About</a></li>
+					<li><a href="#">Services</a></li>
+					<li><a href="#">Resources</a></li>
+					<li><a href="#">Contact</a></li>
+				</ul>
+			</nav>
+		</div>					
+	</div>
+</header>
+
+<div class="ibanner">
+	<div class="container">
+		<div class="row align-items-center justify-content-between">
+			<div class="col-md-12">
+				<div class="title p-0">
+					<h1>Revolutionizing Recruitment: How HR Professionals Are Transforming Hiring Processes with AI</h1>
+				</div>
+				<div class="mb-3">
+					<span class="me-4">Posted on : <strong>December 12, 2024</strong></span>
+					<span>Author : <strong>Danny Sam</strong></span>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="img-area">
+		<!-- <div class="fill" style="background-image: linear-gradient(rgba(0, 0, 0, 0) 0px, rgba(11, 11, 13, 0) 37%, rgba(29, 31, 36, 0.5) 100%), url('../img/1.avif');"></div> -->
+		<!-- <img src="img/building.jpg" class="" alt="" title=""> -->
+	</div>
+</div>
+
+
+<div class="container">
+	<div class="row justify-content-center">
+		<div class="col-md-12">
+			<div class="img-area">
+				<img src="img/news/11.png" class="img-fluid" style="object-fit: cover; height: 50vh; width: 100%;" alt="">
+			</div>
+		</div>	
+	</div>
+</div>
+
+<div class="main-cont pt-0">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-md-10">
+				<p>On 20th February 2023, British Professional College (BPC) welcomed the new batch of ACCA students, by hosting an interactive orientation programme at Hotel Himalaya, Nagarkot. </p>
+				<p>The orientation began with a welcome session led by the Executive Principal, Prof. Mary Bishop, who formally addressed students and helped to commence the programme - along with Deputy Principal, Dr Patrick McCrudden and Head of ACCA (Kathmandu), Mr Rabin Katwal.</p>					
+				<p>The welcome session was followed up by a formal introduction to the ACCA programme, which was conducted by ACCA Programme Manager, Mr Dipendra K Shrestha, along with other department heads.</p>
+				<p>In addition, BPC alumni Ms Rejika Maharjan shared her professional experience and provided tips on students' academic success and professional careers. And newly enrolled student, Mr Sohel Khan, also shared his experience and expectations from the College and the ACCA programme. In addition, two times global prize winner from BPC, Ms. Riya Manandhar, shared her journey to becoming world topper.</p>
+				<p>This was followed by singing, dancing, games, some delicious food, and other fun activities - leaving all of the students with some new friends and some great memories.</p>
+
+				<ul class="tags">
+					<li><a href="#">singing</a></li>
+					<li><a href="#">expectations</a></li>
+					<li><a href="#">students</a></li>
+				</ul>
+
+				<div class="related-news">
+					<div class="row">
+						<div class="col-md-12">
+							<h3>Related News</h3>
+						</div>
+						<div class="col-md-4">
+							<div class="img-area">
+								<a href="#"><img src="img/abstract-blur-defocused-bookshelf-library.jpg" class="img-fluid" alt=""></a>
+							</div>
+							<div class="n-wrap">
+								<h4 class="d-line"><a href="#">British College Hosts Successful Alumni Meet 2023</a></h4>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="img-area">
+								<a href="#"><img src="img/abstract-blur-defocused-bookshelf-library.jpg" class="img-fluid" alt=""></a>
+							</div>
+							<div class="n-wrap">
+								<h4 class="d-line"><a href="#">British College Hosts Successful Alumni Meet 2023</a></h4>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="img-area">
+								<a href="#"><img src="img/abstract-blur-defocused-bookshelf-library.jpg" class="img-fluid" alt=""></a>
+							</div>
+							<div class="n-wrap">
+								<h4 class="d-line"><a href="#">British College Hosts Successful Alumni Meet 2023</a></h4>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>	
+	</div>
+</div>
+
+<footer>
+	<div class="container">
+		<div class="row g-5 justify-content-center">
+			<div class="col-md-4">
+				<a href="#"><img src="img/hirelios.svg" class="img-fluid w-50" alt=""></a>
+				<p class="my-3">Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam</p>
+				<ul class="social">
+					<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+					<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+					<li><a href="#"><i class="fab fa-instagram"></i></a></li>
+					<li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+					<li><a href="#"><i class="fab fa-youtube"></i></a></li>
+				</ul>
+			</div>
+			<div class="col-md-8">
+				<div class="row">
+					<div class="col-md-4">
+						<span class="title">Menu</span>
+						<ul class="category">
+							<li><a href="#">Work with Us</a></li>
+							<li><a href="#">Partner with Us</a></li>
+							<li><a href="#">International Internship</a></li>
+							<li><a href="#">Blog</a></li>
+							<li><a href="#">News</a></li>
+							<li><a href="#">Downloads</a></li>
+							<li><a href="#">Privacy Policy</a></li>
+						</ul>
+					</div>
+					<div class="col-md-4">
+						<span class="title">Legal</span>
+						<ul class="category">
+							<li><a href="#">Contact Us</a></li>
+							<li><a href="#">Enquire Now</a></li>
+							<li><a href="#">Apply Now</a></li>
+							<li><a href="#">Career</a></li>
+							<li><a href="#">Coronavirus Information</a></li>
+							<li><a href="#">International Mobility Programme</a></li>
+							<li><a href="#">Data Protection Policy</a></li>
+						</ul>
+					</div>
+					<div class="col-md-4">
+						<span class="title">Contact Us</span>
+						<address>							
+							<div class="d-flex align-items-center mb-4">
+								<i class="fas fa-phone me-2 fa-2x"></i>
+								<p>
+									+44 20 8305 8700
+								</p>
+							</div>
+							<div class="d-flex align-items-center mb-4">
+								<i class="fas fa-envelope me-2 fa-2x"></i>
+								<p>contact@company.com</p>
+							</div>
+							<div class="d-flex align-items-center">
+								<i class="fas fa-map-marker me-2 fa-2x"></i>
+								<p>London SE18 6DD United Kingdom</p>
+							</div>
+						</address>
+					</div>
+				</div>
+			</div>			
+		</div>
+		<div class="fbtm py-3">
+			<div class="row d-flex align-items-center">
+				<div class="col-auto">
+					<span>&copy; 2024 All rights reserved Hire Lios</span>
+				</div>
+				<div class="col">
+					<ul>
+						<li><a href="#">Terms & Conditions</a></li>
+						<li><a href="#">Privacy</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</footer>
+
+<a href="javascript:void(0)" class="back-to-top bounce" id="back-top"> <i class="las la-arrow-up"></i></a> <!-- /back to top -->
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-body bg-dark p-5 text-white">
+				<div class="position-absolute top-0 start-100 translate-middle rd-close-btn">
+					<button type="button" class="btn btn-sm" data-bs-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></button>
+				</div>		
+				<p class="fs-3 py-3">Search</p>		
+				<div class="input-group search" itemscope itemtype="https://schema.org/WebSite">
+					<meta itemprop="url" content="https://www.thebritishcollege.edu.np/"/>
+					<form class="d-flex w-100" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction">
+						<meta itemprop="target" content="https://www.thebritishcollege.edu.np/search?q={search_term_string}"/>
+						<button class="btn" type="button" id="search"><i class="fas fa-search"></i></button>
+						<input itemprop="query-input" type="text" id="Search" name="search_term_string" class="form-control" placeholder="type here.." aria-describedby="search" required>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="js/techie.js"></script>
+
+<script>
+	// Draggable
+	$( function() {
+		$( "#draggable" ).draggable();
+	} );
+
+	function myFunction() {
+		var x = document.getElementById("draggable");
+		if (x.style.display === "none") {
+			x.style.display = "block";
+		} else {
+			x.style.display = "none";
+		}
+	}
+
+	//Back to Top
+	var btn = $('#back-top');
+
+	$(window).scroll(function() {
+	if ($(window).scrollTop() > 300) {
+		btn.addClass('show');
+	} else {
+		btn.removeClass('show');
+	}
+	});
+	btn.on('click', function(e) {
+	e.preventDefault();
+	$('html, body').animate({scrollTop:0}, '300');
+	});
+</script>
+</body>
+</html>

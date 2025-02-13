@@ -1,0 +1,93 @@
+.show-mb {display:none !important;}
+.hide-mb {display:block !important;}
+
+// Small devices (landscape phones, 576px and up)
+@media (max-width: 576px) {
+	
+}
+
+// Medium devices (tablets, 768px and up)
+@media (max-width: 768px) {
+	.show-mb {display:block !important;}
+	.hide-mb {display:none !important;}
+	header {position: relative; background: $theme-color; color: $white;
+		ul {
+			li {font-size: $fnt-sz + 4;
+				a {color: $white;
+					&:hover, &:focus {color: $white !important;}
+				}
+			}
+		}
+	}
+	.rd-cube-ads {
+		$width:180px;
+		$height:180px;
+		.cube {
+			width: $width;
+			height: $height;
+			.cube-title {font-size: $fnt-sz; margin-bottom: $margin - 10;}
+			.cube-desc {display: block; font-size: $fnt-sz - 2;}
+			.box {
+				&.front {
+					transform: translateZ(($width/2));
+				}
+				&.back {
+					transform: translateZ(-($width/2)) rotateY(180deg);
+				}
+				&.left {
+				transform: rotateY(270deg) translateX(-($width/2));
+				transform-origin: center left;
+				}
+				&.right {
+				transform: rotateY(-270deg) translateX(($width/2));
+				transform-origin: center right;
+				}
+				h2 {padding: $pad - 5; font-size: $fnt-sz;}
+			}
+		}
+		table {
+			tr {
+				td {padding: 0.20rem;}
+			}
+		}
+	}
+	.callback {
+		.col-md-2, .col-md-3 {margin-bottom: $margin;}
+	}
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+	nav {position: relative; z-index: 10;
+		ul {justify-content: end; height: 100%;
+			li {font-size: $fnt-sz; position: relative; letter-spacing: 1px; font-weight: 600; height: 100%; display: inline-block; align-items: center;
+				a {padding: 0 $pad + 5; display: flex; height: 100%; align-items: center;
+					&:hover {background: $theme-color; color: $white !important;}
+				}
+				ul {display: none;}
+				&:hover {
+					a {background: $theme-color; color: $white !important;}
+					ul {display: block; position: absolute; min-width: 200px; height: auto; background: -moz-linear-gradient(90deg, transparentize($theme-color, 0.3) 35%, transparentize($alt-color, 0.3) 100%);
+						background: -webkit-linear-gradient(90deg, transparentize($theme-color, 0.3) 35%, transparentize($alt-color, 0.3) 100%);
+						background: linear-gradient(90deg, transparentize($theme-color, 0.3) 35%, transparentize($alt-color, 0.3) 100%);
+						filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="$theme-color",endColorstr="$alt-color",GradientType=1);
+						li {display: block; position: relative;
+							ul {display: none;}
+							a {padding: $pad - 5 $pad; display: block;
+								&:hover {background: $alt-color;}
+							}
+							&:hover {
+								ul {display: block; left: 200px; top: 0;}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1400px) {
+	
+}
