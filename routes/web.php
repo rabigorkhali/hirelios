@@ -44,6 +44,8 @@ Route::get('/contact', [IndexController::class, 'contact'])->name('contact');
 Route::post('/contact', [IndexController::class, 'contactSave'])->name('contactSave');
 Route::get('/blogs', [IndexController::class, 'blogs'])->name('blogs');
 Route::get('/blogs/{slug}', [IndexController::class, 'blogDetails'])->name('blogDetails');
+Route::get('/services', [IndexController::class, 'services'])->name('services');
+Route::get('/about', [IndexController::class, 'about'])->name('about');
 /*FRONTEND ROUTE*/
 Route::prefix(getSystemPrefix())->middleware(['auth', 'permission.routes', 'log'])->group(function () {
     Route::get('/home', [HomeController::class, 'index'])->name('home.index');

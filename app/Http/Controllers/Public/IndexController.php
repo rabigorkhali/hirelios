@@ -8,6 +8,7 @@ use App\Models\ContactUs;
 use App\Models\Page;
 use App\Models\Partner;
 use App\Models\Post;
+use App\Models\Team;
 use App\Models\Testimonial;
 
 
@@ -36,6 +37,30 @@ class IndexController extends Controller
             $data['partners'] = Partner::where('status', 1)->orderby('position')->get();
             $data['testimonials'] = Testimonial::where('status', 1)->orderby('position')->get();
             return view('frontend.index', $data);
+        } catch (\Throwable $th) {
+            abort(404);
+        }
+    }
+
+    public function about()
+    {
+        try {
+            $data = [];
+            $data['partners'] = Partner::where('status', 1)->orderby('position')->get();
+            $data['teams'] = Team::where('status', 1)->orderby('position')->get();
+            return view('frontend.about', $data);
+        } catch (\Throwable $th) {
+            abort(404);
+        }
+    }
+
+    public function services()
+    {
+        try {
+            $data = [];
+            $data['page'] = Page::where('slug', 'services')->where('status', 1)->first();
+            $data['partners'] = Partner::where('status', 1)->orderby('position')->get();
+            return view('frontend.services', $data);
         } catch (\Throwable $th) {
             abort(404);
         }
