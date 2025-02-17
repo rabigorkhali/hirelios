@@ -101,7 +101,7 @@
                     </div>
                     <script>
                         $('.owl-carousel').owlCarousel({
-                            loop: true,
+                            loop: false,
                             nav: false,
                             margin: 50,
                             animateOut: 'fadeOut',

@@ -26,7 +26,7 @@ class PageRequest extends FormRequest
         $validation = [
             'title' => 'required|max:255',
             'slug' => 'required|max:300|unique:pages,slug,'.$this->id,
-            'body' => 'required|max:10000',
+            'body' => 'required|max:100000',
             'status' => 'nullable|boolean',
         ];
         return $validation;

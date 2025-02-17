@@ -17,25 +17,22 @@
                     <div class="col-md-4">
                         <span class="title">Menu</span>
                         <ul class="category">
-                            <li><a href="#">Work with Us</a></li>
-                            <li><a href="#">Partner with Us</a></li>
-                            <li><a href="#">International Internship</a></li>
+                            <li><a href="{{url('/work-with-us')}}">Work with Us</a></li>
+                            <li><a href="{{url('/partner-with-us')}}">Partner with Us</a></li>
+                            <li><a href="{{url('/international-internship')}}">International Internship</a></li>
                             <li><a href="{{route('blogs')}}">Blog</a></li>
-                            <li><a href="#">News</a></li>
-                            <li><a href="#">Downloads</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="{{url('/privacy-policy')}}">Privacy Policy</a></li>
                         </ul>
                     </div>
                     <div class="col-md-4">
                         <span class="title">Legal</span>
                         <ul class="category">
-                            <li><a href="#">Contact Us</a></li>
-                            <li><a href="#">Enquire Now</a></li>
-                            <li><a href="#">Apply Now</a></li>
-                            <li><a href="#">Career</a></li>
-                            <li><a href="#">Coronavirus Information</a></li>
-                            <li><a href="#">International Mobility Programme</a></li>
-                            <li><a href="#">Data Protection Policy</a></li>
+                            <li><a href="{{route('contact')}}">Contact Us</a></li>
+                            <li><a href="{{url('/career')}}">Career</a></li>
+                            <li><a href="{{url('/coronavirus-information')}}">Coronavirus Information</a></li>
+                            <li><a href="{{url('/international-mobility-programme')}}">International Mobility
+                                    Programme</a></li>
+                            <li><a href="{{url('/date-protection-policy')}}">Data Protection Policy</a></li>
                         </ul>
                     </div>
                     <div class="col-md-4">
@@ -69,8 +66,8 @@
                 </div>
                 <div class="col">
                     <ul>
-                        <li><a href="#">Terms & Conditions</a></li>
-                        <li><a href="#">Privacy</a></li>
+                        <li><a href="{{url('/terms-conditions')}}">Terms & Conditions</a></li>
+                        <li><a href="{{url('/privacy')}}">Privacy</a></li>
                     </ul>
                 </div>
             </div>
