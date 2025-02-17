@@ -7,6 +7,7 @@ use App\Http\Requests\System\ContactUsRequest;
 use App\Models\ContactUs;
 use App\Models\Page;
 use App\Models\Partner;
+use App\Models\Post;
 use App\Models\Testimonial;
 
 
@@ -35,6 +36,32 @@ class IndexController extends Controller
             $data['partners'] = Partner::where('status', 1)->orderby('position')->get();
             $data['testimonials'] = Testimonial::where('status', 1)->orderby('position')->get();
             return view('frontend.index', $data);
+        } catch (\Throwable $th) {
+            abort(404);
+        }
+    }
+
+    public function blogs()
+    {
+        try {
+            $data = [];
+            $data['blogs'] = Post::where('status', 1)->orderby('created_at', 'desc')->paginate(12);
+            return view('frontend.blogs', $data);
+        } catch (\Throwable $th) {
+            abort(404);
+        }
+    }
+
+    public function blogDetails($slug)
+    {
+        try {
+            $data = [];
+            $data['blog'] = Post::where('status', 1)->where('slug', $slug)->first();
+            $data['blogs'] = Post::where('status', 1)->where('slug', '!=', $slug)->orderby('created_at', 'desc')->paginate(12);
+            if (!$data['blog']) {
+                abort(404);
+            }
+            return view('frontend.blog', $data);
         } catch (\Throwable $th) {
             abort(404);
         }

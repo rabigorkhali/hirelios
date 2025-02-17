@@ -3,7 +3,7 @@
         <div class="row g-5 justify-content-center">
             <div class="col-md-4">
                 <a href="#"><img src="{{asset('frontend/img/hirelios.svg')}}" class="img-fluid w-50" alt=""></a>
-                <p class="my-3">Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam</p>
+                <p class="my-3">Keep in touch with us</p>
                 <ul class="social">
                     <li><a href="{{getConfigTableData()?->facebook_url}}"><i class="fab fa-facebook-f"></i></a></li>
                     <li><a href="{{getConfigTableData()?->twitter_url}}"><i class="fab fa-twitter"></i></a></li>
@@ -20,7 +20,7 @@
                             <li><a href="#">Work with Us</a></li>
                             <li><a href="#">Partner with Us</a></li>
                             <li><a href="#">International Internship</a></li>
-                            <li><a href="#">Blog</a></li>
+                            <li><a href="{{route('blogs')}}">Blog</a></li>
                             <li><a href="#">News</a></li>
                             <li><a href="#">Downloads</a></li>
                             <li><a href="#">Privacy Policy</a></li>
