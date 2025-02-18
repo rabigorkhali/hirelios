@@ -10,7 +10,7 @@
                             <p>We focus on creating strong connections, delivering innovative solutions, and
                                 transforming
                                 recruitment for businesses and job seekers.</p>
-                            <a href="#" class="btn btn-theme-gradient">Join Now</a>
+                            <a href="{{route('contact')}}" class="btn btn-theme-gradient">Join Now</a>
                         </div>
                         <div class="col-md-7">
                             <img src="{{asset('frontend/img/banner/1.jpg')}}" class="img-fluid" alt="">

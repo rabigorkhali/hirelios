@@ -4,7 +4,8 @@
         <div class="container-fluid ">
             <div class="row align-items-center">
                 <div class="col-md-6 ps-0">
-                    <img src="{{asset('frontend/img/SIKA UK Headquaters Office - Interior Design Liqui Group.png')}}" class="img-fluid w-100"
+                    <img src="{{asset('frontend/img/SIKA UK Headquaters Office - Interior Design Liqui Group.png')}}"
+                         class="img-fluid w-100"
                          alt="">
                 </div>
                 <div class="col-md-4 d-flex justify-content-center align-items-center order-2">
@@ -13,7 +14,7 @@
                         <p>We offer personalized job opportunities and connect talent with the right employers. Our
                             platform simplifies job searching and recruitment.Together, we drive success for both job
                             seekers and employers. Our platform simplifies job searching and recruitment.</p>
-                        <a href="#" class="btn btn-theme-gradient">Join Now</a>
+                        <a href="{{route('contact')}}" class="btn btn-theme-gradient">Join Now</a>
                     </div>
                     <div class="v-title">
                         <p>Our Services</p>

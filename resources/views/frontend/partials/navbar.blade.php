@@ -205,7 +205,7 @@
     <div class="container">
         <div class="row d-flex align-items-center">
             <div class="col-4 logo">
-                <a href="/"><img src="{{asset('frontend/img/hirelios.svg')}}" class="img-fluid" alt=""></a>
+                <a href="{{url('/')}}"><img src="{{asset('frontend/img/hirelios.svg')}}" class="img-fluid" alt=""></a>
             </div>
             <div class="col-8">
                 <ul class="justify-content-end">
@@ -227,7 +227,7 @@
         <div class="row d-flex align-items-stretch justify-content-center">
             <div class="col-md-2">
                 <div class="logo">
-                    <a href="/"><img src="{{asset('frontend/img/hirelios.svg')}}" class="img-fluid" alt=""></a>
+                    <a href="{{url('/')}}"><img src="{{asset('frontend/img/hirelios.svg')}}" class="img-fluid" alt=""></a>
                 </div>
             </div>
             <nav class="col-md-10">
